@@ -1,4 +1,4 @@
-package b3.desafiofinal.demo;
+package b3.desafiofinal.demo.domains;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,10 +11,10 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Pergunta {
     private String pergunta;
-    private String r1;
-    private String r2;
-    private String r3;
-    private String r4;
+    private String resposta1;
+    private String resposta2;
+    private String resposta3;
+    private String resposta4;
     private String certa;
     private String dificuldade;
 }

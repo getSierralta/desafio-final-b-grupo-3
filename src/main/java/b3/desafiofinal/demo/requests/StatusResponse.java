@@ -1,4 +1,4 @@
-package b3.desafiofinal.demo;
+package b3.desafiofinal.demo.requests;
 
 import lombok.Getter;
 import lombok.Setter;

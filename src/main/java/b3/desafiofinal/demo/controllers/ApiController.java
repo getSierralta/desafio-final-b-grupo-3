@@ -1,7 +1,8 @@
 package b3.desafiofinal.demo.controllers;
 
-import b3.desafiofinal.demo.PerguntaResponse;
-import b3.desafiofinal.demo.StatusResponse;
+import b3.desafiofinal.demo.domains.Pergunta;
+import b3.desafiofinal.demo.domains.Perguntas;
+import b3.desafiofinal.demo.requests.StatusResponse;
 import b3.desafiofinal.demo.requests.PerguntaRequest;
 import b3.desafiofinal.demo.services.ApiService;
 import lombok.RequiredArgsConstructor;
@@ -23,8 +24,13 @@ public class ApiController {
     }
 
     @GetMapping("/perguntas/{dificuldade}")
-    public ResponseEntity<PerguntaResponse> getPerguntas(@PathVariable String dificuldade) throws Exception {
+    public ResponseEntity<Pergunta[]> getPerguntas(@PathVariable String dificuldade){
         return ResponseEntity.ok(apiService.getPerguntas(dificuldade));
+    }
+
+    @GetMapping("/estadistica")
+    public ResponseEntity<Perguntas> getEstadisticas(){
+        return ResponseEntity.ok(apiService.getEstadistica());
     }
 
 }

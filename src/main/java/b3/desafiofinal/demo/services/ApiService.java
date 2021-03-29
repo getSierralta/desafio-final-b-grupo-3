@@ -1,8 +1,8 @@
 package b3.desafiofinal.demo.services;
 
-import b3.desafiofinal.demo.Pergunta;
-import b3.desafiofinal.demo.PerguntaResponse;
-import b3.desafiofinal.demo.StatusResponse;
+import b3.desafiofinal.demo.domains.Pergunta;
+import b3.desafiofinal.demo.domains.Perguntas;
+import b3.desafiofinal.demo.requests.StatusResponse;
 import b3.desafiofinal.demo.requests.PerguntaRequest;
 import org.json.JSONObject;
 import org.springframework.http.HttpEntity;
@@ -12,16 +12,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.List;
-
 @Service
 public class ApiService {
 
-
+    private final RestTemplate restTemplate = new RestTemplate();
     private final String external = "https://serro.pt/perguntas";
 
     public StatusResponse criarPergunta(PerguntaRequest request) throws Exception {
-        RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
@@ -42,11 +39,15 @@ public class ApiService {
         return  response;
     }
 
-    public PerguntaResponse getPerguntas(String dificuldade) {
+    public Pergunta[] getPerguntas(String dificuldade){
         String requestUrl = external + "/"+dificuldade;
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<PerguntaResponse> responseEntity = restTemplate.getForEntity(requestUrl, PerguntaResponse.class);
-        PerguntaResponse invoiceResponse = responseEntity.getBody();
-        return invoiceResponse;
+        ResponseEntity<Pergunta[]> responseEntity = restTemplate.getForEntity(requestUrl, Pergunta[].class);
+        Pergunta[] perguntas = responseEntity.getBody();
+        return perguntas;
+    }
+
+    public Perguntas getEstadistica() {
+        ResponseEntity<Perguntas> responseEntity = restTemplate.getForEntity(external, Perguntas.class);
+        return responseEntity.getBody();
     }
 }
