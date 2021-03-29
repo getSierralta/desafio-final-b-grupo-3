@@ -58,14 +58,14 @@ html, body {
 
 .left_hand {
     height: 8rem;
-    display: none;
-    transition: .5s ease;
+    left: -1000px;
+    opacity: 0;
 }
 
 .right_hand {
     height: 8rem;
-    display: none;
-    transition: .5s ease;
+    right: 1000px;
+    opacity: 0;
     transform: scaleX(-1);
 }
 
@@ -78,9 +78,11 @@ html, body {
 }
 
 .option:hover .left_hand {
-    display: flex;
+    transition: .2s ease-in-out;
+    opacity: 1;
 }
 
 .option:hover .right_hand {
-    display: flex;
+    transition: .2s ease-in-out;
+    opacity: 1;
 }
