@@ -1,0 +1,88 @@
+:root {
+    --color-dark: #160546;
+    --color-primary: #4A1E6B;
+    --color-secondary: #BF0064;
+    --color-extra: #81650A;
+    --color-accent: #28A19C;
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --box-shadow: 5px 0px 20px var(--color-grey-light);
+    --line: 1px var(--color-grey-lightest) solid;
+}
+
+html, body {
+    height: 100%;
+    background: url("../img/bg2.gif") rgba(74,30,107, 0.7);
+    background-size: cover;
+    background-blend-mode: color;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    padding: 1rem;
+}
+
+.logo {
+    max-height: 10rem;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.option {
+    height: 8rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu_title {
+    height: 5rem;
+    cursor: pointer;
+}
+
+.left_hand {
+    height: 8rem;
+    left: -1000px;
+    opacity: 0;
+}
+
+.right_hand {
+    height: 8rem;
+    right: 1000px;
+    opacity: 0;
+    transform: scaleX(-1);
+}
+
+.option:hover .menu_title {
+    filter: invert(100%) drop-shadow(0 0 1.5rem var(--color-white));
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+.option:hover .left_hand {
+    transition: .2s ease-in-out;
+    opacity: 1;
+}
+
+.option:hover .right_hand {
+    transition: .2s ease-in-out;
+    opacity: 1;
+}
