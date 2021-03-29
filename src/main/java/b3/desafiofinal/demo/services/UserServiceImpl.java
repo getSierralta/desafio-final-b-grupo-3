@@ -134,7 +134,13 @@ public class UserServiceImpl implements UserService{
     @Override
     public boolean verifyToken(String token) {
         PasswordResetToken passwordResetToken=passwordResetTokenRepository.findPasswordResetTokenByToken(token);
-        return(passwordResetToken!=null && !passwordResetToken.isUsed() && passwordResetToken.getExpiresAt().isAfter(LocalDateTime.now()));
+        if(passwordResetToken!=null && !passwordResetToken.isUsed() && passwordResetToken.getExpiresAt().isAfter(LocalDateTime.now())){
+            passwordResetToken.setUsed(true);
+            passwordResetTokenRepository.save(passwordResetToken);
+            return true;
+        }else{
+            return false;
+        }
     }
 
     @Override
