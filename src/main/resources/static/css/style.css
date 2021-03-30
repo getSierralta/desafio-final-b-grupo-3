@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&display=swap');
+
 :root {
     --color-dark: #160546;
     --color-primary: #4A1E6B;
@@ -86,3 +88,6 @@ html, body {
     transition: .2s ease-in-out;
     opacity: 1;
 }
+
+/* Estilos do popup do login */
+

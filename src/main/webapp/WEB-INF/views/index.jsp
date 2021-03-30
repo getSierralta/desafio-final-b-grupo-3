@@ -33,5 +33,16 @@
             </div>
         </div>
     </div>
+    <div class="login-wrapper hidden popup">
+        <img class="login-img" sr="../img/login_pic.png" alt="Login Image"/>
+        <div class="login-form">
+            <form id="login">
+                <label for="email">E-mail:</label><br>
+                <input type="email" id="email" name="email"><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password">
+            </form>
+        </div>
+    </div>
 </body>
 </html>
