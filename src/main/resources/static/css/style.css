@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
 :root {
     --color-dark: #160546;
     --color-primary: #4A1E6B;
@@ -6,6 +8,7 @@
     --color-accent: #28A19C;
     --color-white: #FFFFFF;
     --color-black: #000000;
+    --color-grey: #C0C0C0;
     --box-shadow: 5px 0px 20px var(--color-grey-light);
     --line: 1px var(--color-grey-lightest) solid;
 }
@@ -85,4 +88,56 @@ html, body {
 .option:hover .right_hand {
     transition: .2s ease-in-out;
     opacity: 1;
+}
+
+
+
+/* popup */
+
+.popup {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+}
+
+.popup > * {
+    display: flex;
+    padding: 0 1rem 0 1rem;
+}
+
+.ui-widget-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem 0 1rem;
+}
+
+.ui-widget-header,.ui-state-default, ui-button {
+    margin: 0;
+    height: 2rem;
+    background: linear-gradient(to right, var(--color-dark) , var(--color-primary));
+    border-radius: 0%;
+    border-color: linear-gradient(to right, var(--color-grey) , var(--color-primary));;
+    color: var(--color-white);
+    align-items: center;
+    font-family: 'Inconsolata', monospace;
+ }
+
+.pop-body {
+    margin: 0;
+    background-color: var(--color-grey);
+    flex-direction: column;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.rank {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
 }
