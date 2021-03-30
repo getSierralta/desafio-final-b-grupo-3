@@ -12,21 +12,37 @@
         <div class="header">
             <img class="logo" src="../img/logo.png" alt="Logo"/>
         </div>
-        <div class="menu">
-            <div class="option">
-                <img class="left_hand" src="../img/hand.png" alt="Left Hand"/>
-                <img class="menu_title" src="../img/play.svg" alt="Play"/>
-                <img class="right_hand" src="../img/hand.png" alt="Right Hand"/>
+        <div class="dash">
+            <div>
+                <div class="info" id="spinner">
+                    <p>GAMERS</p>
+                    <p>125</p>
+                </div>
+                <img src="../img/head.gif" style="max-height: 15rem;" alt="Head"/>
             </div>
-            <div class="option">
-                <img class="left_hand" src="../img/hand.png" alt="Left Hand"/>
-                <img class="menu_title" src="../img/hs.svg" alt="High Scores"/>
-                <img class="right_hand" src="../img/hand.png" alt="Right Hand"/>
+            <div class="menu">
+                <div class="option">
+                    <div class="left_hand"></div>
+                    <img class="menu_title" src="../img/play.svg" alt="Play"/>
+                    <div class="right_hand"></div>
+                </div>
+                <div class="option">
+                    <div class="left_hand"></div>
+                    <img class="menu_title" src="../img/hs.svg" alt="High Scores"/>
+                    <div class="right_hand"></div>
+                </div>
+                <div class="option">
+                    <div class="left_hand"></div>
+                    <img id="rank" class="menu_title" src="../img/rank.svg" alt="Ranking"/>
+                    <div class="right_hand"></div>
+                </div>
             </div>
-            <div class="option">
-                <img class="left_hand" src="../img/hand.png" alt="Left Hand"/>
-                <img id="rank" class="menu_title" src="../img/rank.svg" alt="Ranking"/>
-                <img class="right_hand" src="../img/hand.png" alt="Right Hand"/>
+            <div>
+                <div class="info" id="spinner">
+                    <p>QUESTIONS</p>
+                    <p>450</p>
+                </div>
+                <img src="../img/head.gif" style="max-height: 15rem; transform: scaleX(-1);" alt="Head"/>
             </div>
         </div>
         <div class="popup" title="RANKING">

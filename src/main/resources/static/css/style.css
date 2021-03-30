@@ -38,12 +38,24 @@ html, body {
     max-height: 10rem;
 }
 
+.dash {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.info {
+    color: var(--color-white);
+    font-size: 2rem;
+}
+
 .menu {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 2rem;
 }
 
 .option {
@@ -63,6 +75,7 @@ html, body {
     height: 8rem;
     left: -1000px;
     opacity: 0;
+    content:url(../img/hand.png);
 }
 
 .right_hand {
@@ -70,6 +83,7 @@ html, body {
     right: 1000px;
     opacity: 0;
     transform: scaleX(-1);
+    content:url(../img/hand.png);
 }
 
 .option:hover .menu_title {
@@ -85,12 +99,23 @@ html, body {
     opacity: 1;
 }
 
+.option:active .menu_title {
+    color: var(--color-white);
+    filter: drop-shadow(0 0 1.5rem var(--color-white));
+}
+
 .option:hover .right_hand {
     transition: .2s ease-in-out;
     opacity: 1;
 }
 
+.option:active .left_hand {
+    content:url(../img/hand2.png);
+}
 
+.option:active .right_hand {
+    content:url(../img/hand2.png);
+}
 
 /* popup */
 
@@ -120,7 +145,7 @@ html, body {
     color: var(--color-white);
     align-items: center;
     font-family: 'Inconsolata', monospace;
- }
+}
 
 .pop-body {
     margin: 0;
@@ -140,4 +165,27 @@ html, body {
     border-radius: 50%;
     width: 2rem;
     height: 2rem;
+}
+
+/* you spin me right round baby right round like a record baby right round round round */
+
+#spinner {
+    animation-name: spin, depth;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    text-align: center;
+}
+
+@keyframes spin {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(-360deg); }
+}
+
+@keyframes depth {
+    50% { text-shadow: 0 0 var(--color-white); }
+    25% { text-shadow: 1px 0 var(--color-white), 2px 0 var(--color-white), 3px 0 var(--color-white), 4px 0 var(--color-white), 5px 0 var(--color-white); }
+    50% { text-shadow: 0 0 var(--color-white); }
+    75% { text-shadow: -1px 0 var(--color-white), -2px 0 var(--color-white), -3px 0 var(--color-white), -4px 0 var(--color-white), -5px 0 var(--color-white); }
+    100% { text-shadow: 0 0 var(--color-white); }
 }
