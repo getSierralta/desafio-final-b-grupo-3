@@ -1,9 +1,8 @@
 package b3.desafiofinal.demo.domains;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -17,4 +16,19 @@ public class Pergunta {
     private String resposta4;
     private String certa;
     private String dificuldade;
+    private List<String> shuffle;
+
+    @Override
+    public String toString() {
+        return "Pergunta{" +
+                "pergunta='" + pergunta + '\'' +
+                ", resposta1='" + resposta1 + '\'' +
+                ", resposta2='" + resposta2 + '\'' +
+                ", resposta3='" + resposta3 + '\'' +
+                ", resposta4='" + resposta4 + '\'' +
+                ", certa='" + certa + '\'' +
+                ", dificuldade='" + dificuldade + '\'' +
+                ", \nshuffle=" + shuffle +
+                '}';
+    }
 }
