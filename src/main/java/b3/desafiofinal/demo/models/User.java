@@ -31,6 +31,7 @@ public class User implements UserDetails {
     private String country;
     private String name;
     private boolean enabled;
+    private String profilePicture;
 
 
     public List<GrantedAuthority> getAuthorities() {
