@@ -35,6 +35,7 @@ public class User implements UserDetails {
     private boolean enabled;
     @Transient
     private List<String> perguntas = new ArrayList<>();
+    private String profilePicture;
 
 
     public List<GrantedAuthority> getAuthorities() {
