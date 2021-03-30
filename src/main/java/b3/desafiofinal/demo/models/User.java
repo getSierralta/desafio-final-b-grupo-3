@@ -7,10 +7,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -26,11 +23,21 @@ public class User implements UserDetails {
     private Long id;
     private String username;
     private String password;
-    @Transient
-    private String confirmPassword;
     private String country;
     private String name;
     private boolean enabled;
+    @Transient
+    private String confirmPassword;
+
+    ///currentGameInfo - deleted on every login and when a new game starts
+    private long currentScore;
+    private boolean usedFiftyFifty;
+    private boolean usedPublicHelp;
+    private boolean usedChangeQuestion;
+
+
+    @OneToOne
+    private Highscore highscore;
 
 
     public List<GrantedAuthority> getAuthorities() {
