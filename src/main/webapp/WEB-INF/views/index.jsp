@@ -12,24 +12,24 @@
         </div>
         <div class="menu">
             <div class="option">
-                <img class="left_hand" src="../img/hand.png" alt="Left Hand"/>
-                <a href="/question"><img class="menu_title" src="../img/play.svg" alt="Play"/></a>
-                <img class="right_hand" src="../img/hand.png" alt="Right Hand"/>
+                <div class="left_hand"></div>
+                <img class="menu_title" src="../img/play.svg" alt="Play"/>
+                <div class="right_hand"></div>
             </div>
             <div class="option">
-                <img class="left_hand" src="../img/hand.png" alt="Left Hand"/>
+                <div class="left_hand"></div>
                 <img class="menu_title" src="../img/hs.svg" alt="High Scores"/>
-                <img class="right_hand" src="../img/hand.png" alt="Right Hand"/>
+                <div class="right_hand"></div>
             </div>
             <div class="option">
-                <img class="left_hand" src="../img/hand.png" alt="Left Hand"/>
+                <div class="left_hand"></div>
                 <img class="menu_title" src="../img/login.svg" alt="Login"/>
-                <img class="right_hand" src="../img/hand.png" alt="Right Hand"/>
+                <div class="right_hand"></div>
             </div>
             <div class="option">
-                <img class="left_hand" src="../img/hand.png" alt="Left Hand"/>
+                <div class="left_hand"></div>
                 <img class="menu_title" src="../img/register.svg" alt="Register"/>
-                <img class="right_hand" src="../img/hand.png" alt="Right Hand"/>
+                <div class="right_hand"></div>
             </div>
         </div>
     </div>
