@@ -5,9 +5,7 @@ import b3.desafiofinal.demo.models.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -62,4 +60,71 @@ public class EngineService {
         }
         throw new IllegalArgumentException("Number out of bound: "+j);
     }
+
+    public String[] helpFighty(Pergunta pergunta){
+        String[] respostas = new String[2];
+        respostas[0] = getLetter(pergunta);
+        List<String> letras = Arrays.asList(getLetras().clone());
+        while (true){
+            String letra = letras.get(new Random().nextInt(4));
+            if (!letra.equals(getLetter(pergunta))){
+                respostas[1] = letra;
+                break;
+            }
+        }
+        return respostas;
+    }
+
+    public Map<String, Integer> helpFromPublic(Pergunta pergunta){
+        switch (pergunta.getDificuldade()){
+            case "fácil":
+                return getHelp(70, pergunta);
+            case "média":
+                return getHelp(50, pergunta);
+            case "difícil":
+                return getHelp(30, pergunta);
+            case "impossível":
+                return getHelp(20, pergunta);
+        }
+        throw new IllegalArgumentException("Dificuldade nao reconhecida: "+pergunta.getDificuldade());
+    }
+
+    private Map<String, Integer> getHelp(int i, Pergunta pergunta) {
+        int resto = 100-i;
+        Map<String, Integer> map = new HashMap<>();
+        String certa = getLetter(pergunta);
+        for (String l: getLetras()) {
+            if (!certa.equals(l)){
+                int num = resto > 0 ? new Random().nextInt(resto) : 0;
+                resto -= num;
+                map.put(l, num);
+            }
+        }
+        map.put(certa, i);
+        return map;
+    }
+
+    private String[] getLetras() {
+        String[] letras = new String[4];
+        letras[0] = "a";
+        letras[1] = "b";
+        letras[2] = "c";
+        letras[3] = "d";
+        return letras;
+    }
+
+    private String getLetter(Pergunta pergunta){
+        switch (pergunta.getCerta()){
+            case "1":
+                return "a";
+            case "2":
+                return "b";
+            case "3":
+                return "c";
+            case "4":
+                return "d";
+        }
+        throw new IllegalArgumentException("Certa errada: "+pergunta.getCerta());
+    }
+
 }

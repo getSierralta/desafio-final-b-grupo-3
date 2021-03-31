@@ -6,6 +6,7 @@ import java.util.List;
 
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class Pergunta {
@@ -17,18 +18,4 @@ public class Pergunta {
     private String certa;
     private String dificuldade;
     private List<String> shuffle;
-
-    @Override
-    public String toString() {
-        return "Pergunta{" +
-                "pergunta='" + pergunta + '\'' +
-                ", resposta1='" + resposta1 + '\'' +
-                ", resposta2='" + resposta2 + '\'' +
-                ", resposta3='" + resposta3 + '\'' +
-                ", resposta4='" + resposta4 + '\'' +
-                ", certa='" + certa + '\'' +
-                ", dificuldade='" + dificuldade + '\'' +
-                ", \nshuffle=" + shuffle +
-                '}';
-    }
 }

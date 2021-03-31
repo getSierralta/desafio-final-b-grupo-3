@@ -1,5 +1,6 @@
 package b3.desafiofinal.demo;
 
+import b3.desafiofinal.demo.domains.Pergunta;
 import b3.desafiofinal.demo.models.User;
 import b3.desafiofinal.demo.services.EngineService;
 import lombok.AllArgsConstructor;
@@ -13,6 +14,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+
+import java.util.Arrays;
 
 @SpringBootApplication
 @AllArgsConstructor
@@ -47,6 +50,13 @@ public class DesafioFinalUpskillApplication {
 				System.out.println("Highscore "+i+": "+highscore.getUser().getName()+" - "+highscore.getHighscore());
 				i++;
 			}
+			/*
+
+			for (int j = 0; j < 20; j++) {
+				Pergunta pergunta = engineService.getNextQuestion("fácil");
+				System.out.println(pergunta);
+				System.out.println(Arrays.toString(engineService.helpFighty(pergunta)));
+			}*/
 		};
 	}
 
