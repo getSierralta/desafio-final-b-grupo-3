@@ -1,5 +1,9 @@
 package b3.desafiofinal.demo.services;
 
+import b3.desafiofinal.demo.models.Highscore;
+import b3.desafiofinal.demo.repositories.ConfirmationTokenRepository;
+import b3.desafiofinal.demo.repositories.PasswordResetTokenRepository;
+import b3.desafiofinal.demo.repositories.UserRepository;
 import b3.desafiofinal.demo.repositories.ConfirmationTokenRepository;
 import b3.desafiofinal.demo.repositories.PasswordResetTokenRepository;
 import b3.desafiofinal.demo.repositories.UserRepository;
@@ -83,6 +87,7 @@ public class UserServiceImpl implements UserService{
         mailSender.send(constructEmail(subject,body,user));
     }
 
+    //cria o token de validação de email
     private ConfirmationToken createToken(User user) {
         String token = java.util.UUID.randomUUID().toString();
         ConfirmationToken confirmationToken= new ConfirmationToken(token, LocalDateTime.now(),user);
@@ -90,6 +95,7 @@ public class UserServiceImpl implements UserService{
         return confirmationToken;
     }
 
+    //cria o token de alteração de password
     private PasswordResetToken createPasswordToken(User user) {
         String token = java.util.UUID.randomUUID().toString();
         PasswordResetToken passwordResetToken= new PasswordResetToken(token, LocalDateTime.now(),user);
@@ -97,6 +103,7 @@ public class UserServiceImpl implements UserService{
         return passwordResetToken;
     }
 
+    //cria o email
     private SimpleMailMessage constructEmail(String subject, String body,
                                              User user) {
         SimpleMailMessage email = new SimpleMailMessage();
@@ -112,8 +119,10 @@ public class UserServiceImpl implements UserService{
         if(user==null) {
             return null;
         }
-        if(passwordEncoder.matches(password,user.getPassword()) && user.isEnabled())
+        if(passwordEncoder.matches(password,user.getPassword()) && user.isEnabled()){
+            clearCurrentGameInfo(user);
             return user;
+        }
         return null;
     }
 
@@ -167,6 +176,30 @@ public class UserServiceImpl implements UserService{
             mav.addObject("successPasswordChange","A sua password foi alterada");
         }
     }
+
+    @Override
+    public boolean checkIfNewPersonalHighscoreAndSave(Highscore newHighscore, User user) {
+        Highscore currentHighscore = user.getHighscore();
+        if(currentHighscore==null || newHighscore.getHighscore()> currentHighscore.getHighscore()){
+            user.setHighscore(newHighscore);
+            userRepository.save(user);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void clearCurrentGameInfo(User user) {
+        user.setCurrentScore(0);
+        user.setUsedFiftyFifty(false);
+        user.setUsedChangeQuestion(false);
+        user.setUsedPublicHelp(false);
+        userRepository.save(user);
+    }
+
+
+
+
 
     // mudar foto de utilizador
     public User user(User user, MultipartFile multipartFile) throws Exception {
