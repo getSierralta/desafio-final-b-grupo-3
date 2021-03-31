@@ -19,31 +19,26 @@
         </div>
         <div class="answer_box">
             <div class="option">
-                <img class="left_hand" src="../img/hand.png" alt="Left Hand"/>
+                <div class="left_hand"></div>
                 <span class="text">A: </span>
-                <img class="right_hand" src="../img/hand.png" alt="Right Hand"/>
+                <div class="right_hand"></div>
             </div>
             <div class="option">
-                <img class="left_hand" src="../img/hand.png" alt="Left Hand"/>
+                <div class="left_hand"></div>
                 <span class="text">B: </span>
-                <img class="right_hand" src="../img/hand.png" alt="Right Hand"/>
+                <div class="right_hand"></div>
             </div>
             <div class="option">
-                <img class="left_hand" src="../img/hand.png" alt="Left Hand"/>
+                <div class="left_hand"></div>
                 <span class="text">C: </span>
-                <img class="right_hand" src="../img/hand.png" alt="Right Hand"/>
+                <div class="right_hand"></div>
             </div>
             <div class="option">
-                <img class="left_hand" src="../img/hand.png" alt="Left Hand"/>
+                <div class="left_hand"></div>
                 <span class="text">D: </span>
-                <img class="right_hand" src="../img/hand.png" alt="Right Hand"/>
+                <div class="right_hand"></div>
             </div>
         </div>
-
-
-
-
-
     </div>
 </body>
 </html>
