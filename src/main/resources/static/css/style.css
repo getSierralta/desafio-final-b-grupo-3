@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
 :root {
     --color-dark: #160546;
     --color-primary: #4A1E6B;
@@ -6,6 +8,7 @@
     --color-accent: #28A19C;
     --color-white: #FFFFFF;
     --color-black: #000000;
+    --color-grey: #C0C0C0;
     --box-shadow: 5px 0px 20px var(--color-grey-light);
     --line: 1px var(--color-grey-lightest) solid;
 }
@@ -35,12 +38,24 @@ html, body {
     max-height: 10rem;
 }
 
+.dash {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.info {
+    color: var(--color-white);
+    font-size: 2rem;
+}
+
 .menu {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 2rem;
 }
 
 .option {
@@ -60,6 +75,7 @@ html, body {
     height: 8rem;
     left: -1000px;
     opacity: 0;
+    content:url(../img/hand.png);
 }
 
 .right_hand {
@@ -67,6 +83,7 @@ html, body {
     right: 1000px;
     opacity: 0;
     transform: scaleX(-1);
+    content:url(../img/hand.png);
 }
 
 .option:hover .menu_title {
@@ -82,7 +99,93 @@ html, body {
     opacity: 1;
 }
 
+.option:active .menu_title {
+    color: var(--color-white);
+    filter: drop-shadow(0 0 1.5rem var(--color-white));
+}
+
 .option:hover .right_hand {
     transition: .2s ease-in-out;
     opacity: 1;
+}
+
+.option:active .left_hand {
+    content:url(../img/hand2.png);
+}
+
+.option:active .right_hand {
+    content:url(../img/hand2.png);
+}
+
+/* popup */
+
+.popup {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+}
+
+.popup > * {
+    display: flex;
+    padding: 0 1rem 0 1rem;
+}
+
+.ui-widget-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem 0 1rem;
+}
+
+.ui-widget-header,.ui-state-default, ui-button {
+    margin: 0;
+    height: 2rem;
+    background: linear-gradient(to right, var(--color-dark) , var(--color-primary));
+    border-radius: 0%;
+    border-color: linear-gradient(to right, var(--color-grey) , var(--color-primary));;
+    color: var(--color-white);
+    align-items: center;
+    font-family: 'Inconsolata', monospace;
+}
+
+.pop-body {
+    margin: 0;
+    background-color: var(--color-grey);
+    flex-direction: column;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.rank {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+}
+
+/* you spin me right round baby right round like a record baby right round round round */
+
+#spinner {
+    animation-name: spin, depth;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    text-align: center;
+}
+
+@keyframes spin {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(-360deg); }
+}
+
+@keyframes depth {
+    50% { text-shadow: 0 0 var(--color-white); }
+    25% { text-shadow: 1px 0 var(--color-white), 2px 0 var(--color-white), 3px 0 var(--color-white), 4px 0 var(--color-white), 5px 0 var(--color-white); }
+    50% { text-shadow: 0 0 var(--color-white); }
+    75% { text-shadow: -1px 0 var(--color-white), -2px 0 var(--color-white), -3px 0 var(--color-white), -4px 0 var(--color-white), -5px 0 var(--color-white); }
+    100% { text-shadow: 0 0 var(--color-white); }
 }
