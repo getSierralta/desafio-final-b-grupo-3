@@ -6,7 +6,6 @@ $(function() {
        $( ".popup" ).dialog( "open" );
     });
 });
-
 $(function() {
     $( ".popup-login" ).dialog({
        autoOpen: false,

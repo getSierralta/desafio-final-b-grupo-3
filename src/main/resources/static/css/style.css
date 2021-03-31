@@ -207,66 +207,38 @@ ui-button {
 /* Estilos do popup do login */
 
 .popup-login {
-    position: absolute;
-    margin-bottom: 80px;
-    height: 200px;
-    width: 400px;
-    padding: 0.2rem;
+    margin: 0;
+    border: none;
+    padding: 0.5rem;
+    font-family: "Times New Roman", Times, serif;
     background-color: #C0C0C0;
-    display:grid;
-    grid-template-columns: 30% 5% 65%;
-    grid-template-rows: 10% 75% 15%;
-    border-style:outset;
-}
-
-.login-title {
-    grid-row: 1;
-    grid-column: 1 / 4;
-    padding-left: 4px;
-    padding-right:4px;
-    color: white;
-    background-image: linear-gradient(to right, #160546 , #4A1E6B);
-}
-
-.login-title button {
-    height:90%;
-    float: right;
-    margin-top:1px;
-    font-family: Times New Roman, serif;
-    font-size: 10px;
-    font-weight: bolder;
-    background-color: #C0C0C0;
-    border-style:outset;
-}
-
-.login-title button:active{
-    border-style:inset;
+    display:flex;
+    flex-direction: row;
 }
 
 .login-img-wrapper {
-    grid-column: 1;
-    grid-row: 2;
+    width:40%;
     display:flex;
     justify-content:center;
 }
 
 .login-img {
-    margin-top: 1rem;
-    height: 120px;
-    width: 90%;
+    height: 100px;
+    width: 80%;
     border-style: inset;
 }
 
 .login-img img{
-    height: 120px;
+    height: 100px;
     width: 100%;
     object-fit: cover;
 }
 
 .login-form {
-    grid-column: 3;
-    grid-row: 2;
-    margin-top: 1rem;
+    margin-left:0.5rem;
+    width:60%;
+    display: flex;
+    flex-direction: column;
 }
 
 .login-form .input{
@@ -274,9 +246,10 @@ ui-button {
 }
 
 .submit-button {
-    margin-top: 60px;
-    width: 30%;
+    margin-top: 20px;
+    width: 50%;
     background-color: #C0C0C0;
     border-style: outset;
-    font-family: Times New Roman, serif;
 }
+
+/* Estilos do popup do registo */
