@@ -1,5 +1,6 @@
 package b3.desafiofinal.demo.models;
 
+import b3.desafiofinal.demo.domains.Pergunta;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
@@ -11,6 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Transient;
+import java.awt.image.AreaAveragingScaleFilter;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -26,11 +29,24 @@ public class User implements UserDetails {
     private Long id;
     private String username;
     private String password;
-    @Transient
-    private String confirmPassword;
     private String country;
     private String name;
     private boolean enabled;
+    @Transient
+    private String confirmPassword;
+
+    ///currentGameInfo - deleted on every login and when a new game starts
+    private long currentScore;
+    private boolean usedFiftyFifty;
+    private boolean usedPublicHelp;
+    private boolean usedChangeQuestion;
+
+
+    @OneToOne
+    private Highscore highscore;
+    @Transient
+    private List<String> perguntas = new ArrayList<>();
+    private String profilePicture;
 
 
     public List<GrantedAuthority> getAuthorities() {
