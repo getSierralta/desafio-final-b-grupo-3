@@ -91,3 +91,77 @@ html, body {
 
 /* Estilos do popup do login */
 
+.login-wrapper {
+    position: absolute;
+    margin-bottom: 80px;
+    height: 200px;
+    width: 400px;
+    padding: 0.2rem;
+    background-color: #C0C0C0;
+    display:grid;
+    grid-template-columns: 30% 5% 65%;
+    grid-template-rows: 10% 75% 15%;
+    border-style:outset;
+}
+
+.login-title {
+    grid-row: 1;
+    grid-column: 1 / 4;
+    padding-left: 4px;
+    padding-right:4px;
+    color: white;
+    background-image: linear-gradient(to right, #160546 , #4A1E6B);
+}
+
+.login-title button {
+    height:90%;
+    float: right;
+    margin-top:1px;
+    font-family: Times New Roman, serif;
+    font-size: 10px;
+    font-weight: bolder;
+    background-color: #C0C0C0;
+    border-style:outset;
+}
+
+.login-title button:active{
+    border-style:inset;
+}
+
+.login-img-wrapper {
+    grid-column: 1;
+    grid-row: 2;
+    display:flex;
+    justify-content:center;
+}
+
+.login-img {
+    margin-top: 1rem;
+    height: 120px;
+    width: 90%;
+    border-style: inset;
+}
+
+.login-img img{
+    height: 120px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.login-form {
+    grid-column: 3;
+    grid-row: 2;
+    margin-top: 1rem;
+}
+
+.login-form .input{
+    width: 80%;
+}
+
+.submit-button {
+    margin-top: 60px;
+    width: 30%;
+    background-color: #C0C0C0;
+    border-style: outset;
+    font-family: Times New Roman, serif;
+}

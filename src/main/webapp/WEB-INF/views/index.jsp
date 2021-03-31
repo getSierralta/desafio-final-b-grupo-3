@@ -34,13 +34,19 @@
         </div>
     </div>
     <div class="login-wrapper hidden popup">
-        <img class="login-img" sr="../img/login_pic.png" alt="Login Image"/>
+        <div class="login-title">Login<button class="close-button" onclick="">X</button></div>
+        <div class="login-img-wrapper">
+            <div class="login-img">
+                <img src="../img/login_pic.png" alt="Login Image"/>
+            </div>
+        </div>
         <div class="login-form">
             <form id="login">
                 <label for="email">E-mail:</label><br>
-                <input type="email" id="email" name="email"><br>
+                <input class="input" type="email" id="email" name="email"><br>
                 <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password">
+                <input class="input" type="password" id="password" name="password">
+                <input class="submit-button" type="submit" value_"Submit">
             </form>
         </div>
     </div>
