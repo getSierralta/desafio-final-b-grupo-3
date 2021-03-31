@@ -23,7 +23,7 @@
             </div>
             <div class="option">
                 <div class="left_hand"></div>
-                <img class="menu_title" src="../img/login.svg" alt="Login"/>
+                <img id="login" class="menu_title" src="../img/login.svg" alt="Login"/>
                 <div class="right_hand"></div>
             </div>
             <div class="option">
@@ -33,8 +33,7 @@
             </div>
         </div>
     </div>
-    <div class="login-wrapper hidden popup">
-        <div class="login-title">Login<button class="close-button" onclick="">X</button></div>
+    <div class="popup-login" title="Login">
         <div class="login-img-wrapper">
             <div class="login-img">
                 <img src="../img/login_pic.png" alt="Login Image"/>
@@ -50,5 +49,6 @@
             </form>
         </div>
     </div>
+    <script src="../js/popup.js"></script>
 </body>
 </html>
