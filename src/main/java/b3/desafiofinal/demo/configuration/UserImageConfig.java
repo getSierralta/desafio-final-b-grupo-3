@@ -11,5 +11,6 @@ public class UserImageConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry resourceHandlerRegistry) {
         resourceHandlerRegistry.addResourceHandler("/user-imagens/**")
                 .addResourceLocations("file:user-imagens/");
+
     }
 }

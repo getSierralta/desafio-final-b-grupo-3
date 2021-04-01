@@ -2,12 +2,16 @@ package b3.desafiofinal.demo.services;
 
 import b3.desafiofinal.demo.models.Highscore;
 import b3.desafiofinal.demo.models.User;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
 public interface UserService {
+
+    //método para ir buscar o user atualmente logado
+    User getLoggedUser();
 
     //grava o novo user e pode devolver no mav as seguintes mensagens - errorMail, errorPassword - viewname-Registo (erro)
     //viewname - login (se der certo)
@@ -39,4 +43,6 @@ public interface UserService {
     //apaga info de pontuaçao atual e de ajudas utilizadas
     void clearCurrentGameInfo(User user);
 
+    //adiciona o score ao currentScore e devolve o score atual
+    long addScore(User loggedUser, int difficulty, long timeLeft);
 }

@@ -28,9 +28,9 @@ public class ApiController {
         return ResponseEntity.ok(apiService.getPerguntas(dificuldade));
     }
 
-    @GetMapping("/estadistica")
-    public ResponseEntity<Perguntas> getEstadisticas(){
-        return ResponseEntity.ok(apiService.getEstadistica());
+    @GetMapping("/estatistica")
+    public ResponseEntity<Perguntas> getEstatisticas(){
+        return ResponseEntity.ok(apiService.getEstatistica());
     }
 
 }

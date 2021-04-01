@@ -13,6 +13,8 @@ import b3.desafiofinal.demo.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -37,6 +39,15 @@ public class UserServiceImpl implements UserService{
     @Autowired
     JavaMailSender mailSender;
 
+
+    @Override
+    public User getLoggedUser() {
+        return userRepository.findByUsername(getAuthentication().getName());
+    }
+
+    public Authentication getAuthentication() {
+        return SecurityContextHolder.getContext().getAuthentication();
+    }
 
     @Override
     public void registerUser(ModelAndView mav, User user) {
@@ -194,11 +205,28 @@ public class UserServiceImpl implements UserService{
         user.setUsedFiftyFifty(false);
         user.setUsedChangeQuestion(false);
         user.setUsedPublicHelp(false);
+        user.setNumberOfQuestionsAnswered(0);
         userRepository.save(user);
     }
 
-
-
+    @Override
+    public long addScore(User user, int difficulty, long timeLeft) {
+        long score=timeLeft;
+        switch (difficulty) {
+            case 1:
+                score += 50;
+            case 2:
+                score += 75;
+            case 3:
+                score += 100;
+            case 4:
+                score += 200;
+        }
+        user.setCurrentScore(user.getCurrentScore()+score);
+        user.setNumberOfQuestionsAnswered(user.getNumberOfQuestionsAnswered()+1);
+        userRepository.save(user);
+        return user.getCurrentScore();
+    }
 
 
     // mudar foto de utilizador
