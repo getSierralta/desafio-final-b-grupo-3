@@ -2,8 +2,8 @@ package b3.desafiofinal.demo.services;
 
 import b3.desafiofinal.demo.domains.Pergunta;
 import b3.desafiofinal.demo.domains.Perguntas;
-import b3.desafiofinal.demo.requests.StatusResponse;
 import b3.desafiofinal.demo.requests.PerguntaRequest;
+import b3.desafiofinal.demo.requests.StatusResponse;
 import org.json.JSONObject;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;

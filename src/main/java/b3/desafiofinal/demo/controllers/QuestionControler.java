@@ -12,4 +12,9 @@ public class QuestionControler {
         map.addAttribute("name", "Max");
         return "question";
     }
+
+    @GetMapping(value= "/new-question")
+    public String showNewQuestionForm() {
+        return "new-question";
+    }
 }
