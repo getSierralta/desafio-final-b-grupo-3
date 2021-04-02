@@ -9,6 +9,10 @@
     --color-white: #FFFFFF;
     --color-black: #000000;
     --color-grey: #C0C0C0;
+    --color-neon-blue: #0CD9C7;
+    --color-neon-green: #39FF14;
+    --color-neon-green-dark: #00C500;
+    --color-neon-purple: #DF00FE;
     --box-shadow: 5px 0px 20px var(--color-grey-light);
     --line: 1px var(--color-grey-lightest) solid;
 }
@@ -36,6 +40,7 @@ html, body {
 
 .logo {
     max-height: 10rem;
+    justify-self: center;
 }
 
 .dash {
