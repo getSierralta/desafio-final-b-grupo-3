@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/loser_style.css">
     <link rel="stylesheet" href="../css/question_style.css">
     <title>Question ${questionNumber}</title>
 </head>
@@ -29,13 +30,16 @@
              <img class="logo_question" src="../img/logo.png" alt="Logo"/>
              <div class="button_list">
                  <button class="retro_button">
-                   <img src="../img/5050.png" width="100" height="40" alt="5050"/>
+                   <img src="../img/5050.png" width="100" height="35" alt="5050"/>
                  </button>
                  <button class="retro_button">
-                   <img src="../img/switch.png" width="100" height="40" alt="Switch"/>
+                   <img src="../img/switch.png" width="100" height="35" alt="Switch"/>
                  </button>
                  <button class="retro_button">
-                   <img src="../img/public.png" width="100" height="40" alt="Public Help"/>
+                   <img src="../img/public.png" width="100" height="35" alt="Public Help"/>
+                 </button>
+                 <button class="retro_button">
+                   <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank"><img src="../img/hope.png" width="100" height="35" alt="Hope"/></a>
                  </button>
              </div>
          </div>
@@ -58,6 +62,11 @@
              <div class="option_box">
                  <div class="answer">D: g ggggg gggg ggggg ggg gggg ggg </div>
              </div>
+         </div>
+         <div class="infoGame">
+             <div class="left_hand"></div>
+             <a href="/logout">Quit</a>
+             <div class="right_hand"></div>
          </div>
     </div>
 </body>
