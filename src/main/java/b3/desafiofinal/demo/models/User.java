@@ -40,6 +40,7 @@ public class User implements UserDetails {
     private boolean usedFiftyFifty;
     private boolean usedPublicHelp;
     private boolean usedChangeQuestion;
+    private int numberOfQuestionsAnswered;
 
 
     @OneToOne

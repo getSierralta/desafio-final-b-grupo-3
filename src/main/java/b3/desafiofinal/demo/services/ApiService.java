@@ -46,7 +46,7 @@ public class ApiService {
         return perguntas;
     }
 
-    public Perguntas getEstadistica() {
+    public Perguntas getEstatistica() {
         ResponseEntity<Perguntas> responseEntity = restTemplate.getForEntity(external, Perguntas.class);
         return responseEntity.getBody();
     }
