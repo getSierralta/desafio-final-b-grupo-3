@@ -45,46 +45,46 @@
                 <img src="../img/head.gif" style="max-height: 15rem; transform: scaleX(-1);" alt="Head"/>
             </div>
         </div>
-        <div class="popup" title="RANKING">
+        <div class="popup" title="Ranking">
             <div class="pop-body">
                 <div class="rank">
-                    <img class="profile-pic" src="../img/palm.png" alt="Profile Pic"/>
+                    <div class="profile-pic-wrapper"><img class="profile-pic" src="../img/palm.png" alt="Profile Pic"/></div>
                     <p>1 David Meowie 165 pts</p>
                 </div>
                 <div class="rank">
-                    <img class="profile-pic" src="../img/palm.png" alt="Profile Pic"/>
+                    <div class="profile-pic-wrapper"><img class="profile-pic" src="../img/palm.png" alt="Profile Pic"/></div>
                     <p>2 Jenipurr Lopez 142 pts</p>
                 </div>
                 <div class="rank">
-                    <img class="profile-pic" src="../img/palm.png" alt="Profile Pic"/>
+                    <div class="profile-pic-wrapper"><img class="profile-pic" src="../img/palm.png" alt="Profile Pic"/></div>
                     <p>3 Peter Barker 45 pts</p>
                 </div>
                 <div class="rank">
-                    <img class="profile-pic" src="../img/palm.png" alt="Profile Pic"/>
+                    <div class="profile-pic-wrapper"><img class="profile-pic" src="../img/palm.png" alt="Profile Pic"/></div>
                     <p>4 Mark Buffalo 38 pts</p>
                 </div>
                 <div class="rank">
-                    <img class="profile-pic" src="../img/palm.png" alt="Profile Pic"/>
+                    <div class="profile-pic-wrapper"><img class="profile-pic" src="../img/palm.png" alt="Profile Pic"/></div>
                     <p>5 Corgi Maguaire 27 pts</p>
                 </div>
                 <div class="rank">
-                    <img class="profile-pic" src="../img/palm.png" alt="Profile Pic"/>
+                    <div class="profile-pic-wrapper"><img class="profile-pic" src="../img/palm.png" alt="Profile Pic"/></div>
                     <p>6 Britney Squirrels 26 pts</p>
                 </div>
                 <div class="rank">
-                    <img class="profile-pic" src="../img/palm.png" alt="Profile Pic"/>
+                    <div class="profile-pic-wrapper"><img class="profile-pic" src="../img/palm.png" alt="Profile Pic"/></div>
                     <p>7 Llama del Rey 19 pts</p>
                 </div>
                 <div class="rank">
-                    <img class="profile-pic" src="../img/palm.png" alt="Profile Pic"/>
+                    <div class="profile-pic-wrapper"><img class="profile-pic" src="../img/palm.png" alt="Profile Pic"/></div>
                     <p>8 Justin Beaver 15 pts</p>
                 </div>
                 <div class="rank">
-                    <img class="profile-pic" src="../img/palm.png" alt="Profile Pic"/>
+                    <div class="profile-pic-wrapper"><img class="profile-pic" src="../img/palm.png" alt="Profile Pic"/></div>
                     <p>9 ProgHamster 12 pts</p>
                 </div>
                 <div class="rank">
-                    <img class="profile-pic" src="../img/palm.png" alt="Profile Pic"/>
+                    <div class="profile-pic-wrapper"><img class="profile-pic" src="../img/palm.png" alt="Profile Pic"/></div>
                     <p>10 Kitty Minaj 9 pts</p>
                 </div>
             </div>
