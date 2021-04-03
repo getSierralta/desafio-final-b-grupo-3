@@ -1,32 +1,19 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/loser_style.css">
     <link rel="stylesheet" href="../css/question_style.css">
-    <title>Question ${perguntaN}</title>
+    <title>${perguntaN}</title>
 </head>
 <body>
      <div class="wrap">
          <div class="header_question">
-             <ul class="list">
-                 <li>Impossible</li>
-                 <li>Hard</li>
-                 <li>Hard</li>
-                 <li>Hard</li>
-                 <li>Hard</li>
-                 <li>Hard</li>
-                 <li>Medium</li>
-                 <li class="dificulty_selected">Medium</li>
-                 <li class="dificulty_passed">Medium</li>
-                 <li class="dificulty_passed">Medium</li>
-                 <li class="dificulty_passed">Medium</li>
-                 <li class="dificulty_passed">Easy</li>
-                 <li class="dificulty_passed">Easy</li>
-                 <li class="dificulty_passed">Easy</li>
-                 <li class="dificulty_passed">Easy</li>
+             <ul class="list" id="list">
+
              </ul>
              <img class="logo_question" src="../img/logo.png" alt="Logo"/>
              <div class="button_list">
@@ -51,17 +38,17 @@
              </div>
          </div>
          <div class="answer_box">
-             <div class="option_box">
+             <div class="option_box" onclick="resposta(${pergunta.getCerta()}, '${pergunta.getShuffle().get(0)}', '${pergunta.getResposta1()}', '${pergunta.getResposta2()}', '${pergunta.getResposta3()}', '${pergunta.getResposta4()}', '${pergunta.getDificuldade()}')">
                  <div class="answer">A: ${pergunta.getShuffle().get(0)}</div>
              </div>
-             <div class="option_box">
+             <div class="option_box" onclick="resposta(${pergunta.getCerta()}, '${pergunta.getShuffle().get(1)}', '${pergunta.getResposta1()}', '${pergunta.getResposta2()}', '${pergunta.getResposta3()}', '${pergunta.getResposta4()}', '${pergunta.getDificuldade()}')">
                  <div class="answer">B: ${pergunta.getShuffle().get(1)} </div>
              </div>
-             <div class="option_box">
+             <div class="option_box" onclick="resposta(${pergunta.getCerta()}, '${pergunta.getShuffle().get(2)}', '${pergunta.getResposta1()}', '${pergunta.getResposta2()}', '${pergunta.getResposta3()}', '${pergunta.getResposta4()}', '${pergunta.getDificuldade()}')">
                  <div class="answer">C: ${pergunta.getShuffle().get(2)}</div>
              </div>
-             <div class="option_box">
-                 <div class="answer">D: ${pergunta.getShuffle().get(3)}/</div>
+             <div class="option_box" onclick="resposta(${pergunta.getCerta()}, '${pergunta.getShuffle().get(3)}', '${pergunta.getResposta1()}', '${pergunta.getResposta2()}', '${pergunta.getResposta3()}', '${pergunta.getResposta4()}', '${pergunta.getDificuldade()}')">
+                 <div class="answer">D: ${pergunta.getShuffle().get(3)}</div>
              </div>
          </div>
          <div class="infoGame">
@@ -70,5 +57,6 @@
              <div class="right_hand"></div>
          </div>
     </div>
+    <script src="../js/pergunta.js"></script>
 </body>
 </html>

@@ -26,7 +26,7 @@
                 </div>
                 <div class="infoGame">
                     <div class="left_hand"></div>
-                    <a href="/play">Play again</a>
+                    <a href="/question">Play again</a>
                     <div class="right_hand"></div>
                 </div>
                 <div class="infoGame">

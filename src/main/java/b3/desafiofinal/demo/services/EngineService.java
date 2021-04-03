@@ -42,7 +42,7 @@ public class EngineService {
             case 6:
             case 7:
             case 8:
-                return "medía";
+                return "média";
             case 9:
             case 10:
             case 11:

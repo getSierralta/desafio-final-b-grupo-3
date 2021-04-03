@@ -4,9 +4,6 @@ import b3.desafiofinal.demo.models.Highscore;
 import b3.desafiofinal.demo.repositories.ConfirmationTokenRepository;
 import b3.desafiofinal.demo.repositories.PasswordResetTokenRepository;
 import b3.desafiofinal.demo.repositories.UserRepository;
-import b3.desafiofinal.demo.repositories.ConfirmationTokenRepository;
-import b3.desafiofinal.demo.repositories.PasswordResetTokenRepository;
-import b3.desafiofinal.demo.repositories.UserRepository;
 import b3.desafiofinal.demo.models.ConfirmationToken;
 import b3.desafiofinal.demo.models.PasswordResetToken;
 import b3.desafiofinal.demo.models.User;
@@ -211,7 +208,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public long addScore(User user, int difficulty, long timeLeft) {
-        long score=timeLeft;
+        long score = timeLeft;
         switch (difficulty) {
             case 1:
                 score += 50;
