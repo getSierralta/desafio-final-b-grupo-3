@@ -4,6 +4,8 @@ import b3.desafiofinal.demo.models.Highscore;
 import b3.desafiofinal.demo.models.User;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 public interface UserService {
 
     //método para ir buscar o user atualmente logado
