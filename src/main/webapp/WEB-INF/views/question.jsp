@@ -66,7 +66,7 @@
          </div>
          <div class="infoGame">
              <div class="left_hand"></div>
-             <a href="/logout">Quit</a>
+             <a href="<c:url value="/logout" />">Quit</a>
              <div class="right_hand"></div>
          </div>
     </div>

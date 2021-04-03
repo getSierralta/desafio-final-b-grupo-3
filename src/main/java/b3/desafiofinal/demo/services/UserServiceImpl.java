@@ -24,6 +24,7 @@ import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -226,6 +227,11 @@ public class UserServiceImpl implements UserService{
         user.setNumberOfQuestionsAnswered(user.getNumberOfQuestionsAnswered()+1);
         userRepository.save(user);
         return user.getCurrentScore();
+    }
+
+    @Override
+    public List<User> getPlayers() {
+        return userRepository.findAll();
     }
 
 

@@ -7,6 +7,14 @@ $(function() {
     });
 });
 $(function() {
+    $( ".popupHighscore" ).dialog({
+        autoOpen: false,
+    });
+    $( "#highscore" ).click(function() {
+        $( ".popupHighscore" ).dialog( "open" );
+    });
+});
+$(function() {
     $( ".popup-login" ).dialog({
        autoOpen: false,
     });
