@@ -53,19 +53,19 @@ public class UserServiceImpl implements UserService{
     public void registerUser(ModelAndView mav, User user) {
         if(userRepository.findByUsername(user.getUsername())!=null){
             mav.addObject("errorMail","O email indicado já está registado");
-            mav.setViewName("/registo");
+            mav.setViewName("/index");
             return;
         }
         if(!user.getPassword().equals(user.getConfirmPassword())){
             mav.addObject("errorPassword","Por favor verifique a password indicada");
-            mav.setViewName("/registo");
+            mav.setViewName("/index");
             return;
         }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
         ConfirmationToken confirmationToken= createToken(user);
         sendConfirmationMail(user, confirmationToken);
-        mav.setViewName("/login");
+        mav.setViewName("/index");
         mav.addObject("verifyMessage","Valide o email, clicando no link enviado");
     }
 

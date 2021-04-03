@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <title>Hello ${name}!</title>
 </head>
 <body>
@@ -13,16 +14,7 @@
             <img class="logo" src="../img/logo.png" alt="Logo"/>
         </div>
         <div class="menu">
-            <div class="option">
-                <div class="left_hand"></div>
-                <img class="menu_title" src="../img/play.svg" alt="Play"/>
-                <div class="right_hand"></div>
-            </div>
-            <div class="option">
-                <div class="left_hand"></div>
-                <img class="menu_title" src="../img/hs.svg" alt="High Scores"/>
-                <div class="right_hand"></div>
-            </div>
+
             <div class="option">
                 <div class="left_hand"></div>
                 <img id="login" class="menu_title" src="../img/login.svg" alt="Login"/>
@@ -42,11 +34,11 @@
             </div>
         </div>
         <div class="login-form">
-            <form id="login">
+            <form id="login" method="post" action="/login" id="login">
                 <label for="email">E-mail:</label><br>
-                <input class="input" type="email" id="email" name="email"><br>
+                <input type="text" id="username" name="username"><br>
                 <label for="password">Password:</label><br>
-                <input class="input" type="password" id="password" name="password">
+                 <input type="password" id="password" name="password">
                 <input class="submit-button" type="submit" value_"Submit">
             </form>
         </div>
@@ -58,17 +50,17 @@
                 </div>
             </div>
             <div class="register-form">
-                <form id="register">
+                <form id="register" action="/register" method="post">
                     <label for="fname">Name:</label><br>
-                    <input class="input" type="text" id="fname" name="fname"><br>
-                    <label for="password">Surname:</label><br>
-                    <input class="input" type="text" id="lname" name="lname"><br>
+                    <input class="input" type="text" id="fname" name="name"><br>
+                    <label for="password">Email:</label><br>
+                    <input class="input" type="text" id="lname" name="username"><br>
                     <label for="password">City:</label><br>
                     <input class="input" type="text" id="city" name="city"><br>
-                    <label for="email">E-mail:</label><br>
-                    <input class="input" type="email" id="email" name="email"><br>
                     <label for="password">Password:</label><br>
-                    <input class="input" type="password" id="password" name="password">
+                    <input class="input" type="password" id="password" name="password"><br>
+                    <label for="password">Confirm Password:</label><br>
+                    <input class="input" type="password" id="password" name="confirmPassword"><br>
                     <input class="submit-button" type="submit" value_"Submit">
                 </form>
             </div>

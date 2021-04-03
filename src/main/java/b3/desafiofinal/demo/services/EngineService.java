@@ -13,6 +13,51 @@ public class EngineService {
 
     private final ApiService apiService;
 
+    public Pergunta getNextQuestion(User user) throws Exception {
+        Pergunta pergunta = getNextQuestion(getDifficulty(user));
+        int i = 0;
+        while (true){
+            if (!user.getPerguntas().contains(pergunta.getPergunta())){
+                user.getPerguntas().add(pergunta.getPergunta());
+                return pergunta;
+            }else{
+                pergunta = getNextQuestion(getDifficulty(user));
+                i++;
+                if (i > 5){
+                    throw new Exception("out of questions");
+                }
+            }
+        }
+    }
+
+    private String getDifficulty(User user){
+        switch (user.getNumberOfQuestionsAnswered()){
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                return "fácil";
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+                return "medía";
+            case 9:
+            case 10:
+            case 11:
+            case 12:
+            case 13:
+            case 14:
+                return "difícil";
+            case 15:
+                return "impossível";
+
+
+        }
+        throw new IllegalArgumentException("Quantia de perguntas errado");
+    }
+
     public Pergunta getNextQuestion(String dificuldade, User user) throws Exception {
         Pergunta pergunta = getNextQuestion(dificuldade);
         int i = 0;
@@ -126,5 +171,6 @@ public class EngineService {
         }
         throw new IllegalArgumentException("Certa errada: "+pergunta.getCerta());
     }
+
 
 }

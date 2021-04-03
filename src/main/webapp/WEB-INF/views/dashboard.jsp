@@ -23,7 +23,7 @@
             <div class="menu">
                 <div class="option">
                     <div class="left_hand"></div>
-                    <img class="menu_title" src="../img/play.svg" alt="Play"/>
+                    <a href="/question"> <img class="menu_title" src="../img/play.svg" alt="Play"/></a>
                     <div class="right_hand"></div>
                 </div>
                 <div class="option">
@@ -88,6 +88,11 @@
                     <p>10 Kitty Minaj 9 pts</p>
                 </div>
             </div>
+        </div>
+        <div class="infoGame">
+         <div class="left_hand"></div>
+         <a href="/logout">Quit</a>
+         <div class="right_hand"></div>
         </div>
     </div>
     <script src="../js/popup.js"></script>

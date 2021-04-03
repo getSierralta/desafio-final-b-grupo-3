@@ -31,10 +31,10 @@ public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
 
         String targetUrl = "/";
         if (roles.contains("ROLE_USER")) {
-            targetUrl = "/Dashboard";
+            targetUrl = "/dashboard";
         }
         if (roles.contains("ROLE_ADMIN")) {
-            targetUrl = "/DashboardAdmin";
+            targetUrl = "/dashboardAdmin";
         }
 
         for(String role:roles){

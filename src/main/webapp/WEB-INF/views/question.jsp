@@ -1,31 +1,32 @@
 <!DOCTYPE html>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/loser_style.css">
     <link rel="stylesheet" href="../css/question_style.css">
-    <title>Question ${questionNumber}</title>
+    <title>Question ${perguntaN}</title>
 </head>
 <body>
      <div class="wrap">
          <div class="header_question">
              <ul class="list">
-                 <li>Question 15: Impossible</li>
-                 <li>Question 14: Hard</li>
-                 <li>Question 13: Hard</li>
-                 <li>Question 12: Hard</li>
-                 <li>Question 11: Hard</li>
-                 <li>Question 10: Hard</li>
-                 <li>Question 9: Medium</li>
-                 <li class="dificulty_selected">Question 8: Medium</li>
-                 <li class="dificulty_passed">Question 7: Medium</li>
-                 <li class="dificulty_passed">Question 6: Medium</li>
-                 <li class="dificulty_passed">Question 5: Medium</li>
-                 <li class="dificulty_passed">Question 4: Easy</li>
-                 <li class="dificulty_passed">Question 3: Easy</li>
-                 <li class="dificulty_passed">Question 2: Easy</li>
-                 <li class="dificulty_passed">Question 1: Easy</li>
+                 <li>Impossible</li>
+                 <li>Hard</li>
+                 <li>Hard</li>
+                 <li>Hard</li>
+                 <li>Hard</li>
+                 <li>Hard</li>
+                 <li>Medium</li>
+                 <li class="dificulty_selected">Medium</li>
+                 <li class="dificulty_passed">Medium</li>
+                 <li class="dificulty_passed">Medium</li>
+                 <li class="dificulty_passed">Medium</li>
+                 <li class="dificulty_passed">Easy</li>
+                 <li class="dificulty_passed">Easy</li>
+                 <li class="dificulty_passed">Easy</li>
+                 <li class="dificulty_passed">Easy</li>
              </ul>
              <img class="logo_question" src="../img/logo.png" alt="Logo"/>
              <div class="button_list">
@@ -46,21 +47,21 @@
          <div class="question_box">
          <img id="skull" src="../img/skull.gif" alt="Skull"/>
              <div class="question">
-                 <span>Q: ggg ggggg gg ggggggg??? </span>
+                 <span>Q: ${pergunta.getPergunta()} </span>
              </div>
          </div>
          <div class="answer_box">
              <div class="option_box">
-                 <div class="answer">A: ggggggggg ggggggg</div>
+                 <div class="answer">A: ${pergunta.getShuffle().get(0)}</div>
              </div>
              <div class="option_box">
-                 <div class="answer">B: Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch </div>
+                 <div class="answer">B: ${pergunta.getShuffle().get(1)} </div>
              </div>
              <div class="option_box">
-                 <div class="answer">C: ggggggg ggggg gggggg gggggg gggggg gggggggg ggggggg ggggg gggggg gggggg gggggg gggggggg</div>
+                 <div class="answer">C: ${pergunta.getShuffle().get(2)}</div>
              </div>
              <div class="option_box">
-                 <div class="answer">D: g ggggg gggg ggggg ggg gggg ggg </div>
+                 <div class="answer">D: ${pergunta.getShuffle().get(3)}/</div>
              </div>
          </div>
          <div class="infoGame">

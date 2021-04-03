@@ -23,6 +23,11 @@
                 <button class="thiago-fix-this-class" type="submit">Register</button>
             </form>
         </div>
+        <div class="infoGame">
+             <div class="left_hand"></div>
+             <a href="/logout">Quit</a>
+             <div class="right_hand"></div>
+         </div>
     </main>
 </body>
 

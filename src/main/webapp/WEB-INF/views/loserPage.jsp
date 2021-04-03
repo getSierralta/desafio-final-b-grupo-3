@@ -91,6 +91,11 @@
                 </div>
             </div>
         </div>
+        <div class="infoGame">
+             <div class="left_hand"></div>
+             <a href="/logout">Quit</a>
+             <div class="right_hand"></div>
+         </div>
     </div>
     <script src="../js/popup.js"></script>
 </body>
