@@ -160,7 +160,7 @@ function resposta(certa, res, res1, res2, res3, res4, dif){
         case "fácil":
            dif = 1;
             break;
-        case "medía":
+        case "média":
             dif = 2;
             break;
         case "difícil":

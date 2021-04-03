@@ -224,8 +224,6 @@ public class UserServiceImpl implements UserService{
         userRepository.save(user);
         return user.getCurrentScore();
     }
-
-
     // mudar foto de utilizador
     public User user(User user, MultipartFile multipartFile) throws Exception {
         String rootDir = System.getProperty("user.dir");
