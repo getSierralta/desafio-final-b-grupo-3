@@ -44,12 +44,12 @@ public class DesafioFinalUpskillApplication {
 			score=2000;
 			highscoreService.saveHighscore(score,user);
 			System.out.println("Devia ser 2000: "+user.getHighscore().getHighscore());
-			System.out.println(highscoreService.getTopTenHighScores());*/
+			System.out.println(highscoreService.getTopTenHighScores());
 			int i=1;
 			for(Highscore highscore: highscoreService.getTopTenHighScores()){
 				System.out.println("Highscore "+i+": "+highscore.getUser().getName()+" - "+highscore.getHighscore());
 				i++;
-			}
+			}*/
 			/*
 			for (int j = 0; j < 5; j++) {
 				Pergunta pergunta = engineService.getNextQuestion("fácil");
