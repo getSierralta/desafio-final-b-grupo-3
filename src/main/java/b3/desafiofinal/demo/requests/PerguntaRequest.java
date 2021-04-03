@@ -1,8 +1,10 @@
 package b3.desafiofinal.demo.requests;
 
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 @Data
+@RequiredArgsConstructor
 public class PerguntaRequest {
     private String pergunta;
     private String r1;

@@ -2,8 +2,8 @@ package b3.desafiofinal.demo.services;
 
 import b3.desafiofinal.demo.domains.Pergunta;
 import b3.desafiofinal.demo.domains.Perguntas;
-import b3.desafiofinal.demo.requests.StatusResponse;
 import b3.desafiofinal.demo.requests.PerguntaRequest;
+import b3.desafiofinal.demo.requests.StatusResponse;
 import org.json.JSONObject;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -28,8 +28,9 @@ public class ApiService {
         perguntaRequest.put("resposta2", request.getR2());
         perguntaRequest.put("resposta3", request.getR3());
         perguntaRequest.put("resposta4", request.getR4());
-        perguntaRequest.put("certa", request.getCerta());
+        perguntaRequest.put("certa", Integer.parseInt(request.getCerta()));
         perguntaRequest.put("dificuldade", request.getDificuldade());
+        System.out.println(perguntaRequest);
 
         String requestUrl = external+"/nova";
         StatusResponse response = restTemplate.postForObject(requestUrl, new HttpEntity<>(perguntaRequest.toString(), headers), StatusResponse.class);

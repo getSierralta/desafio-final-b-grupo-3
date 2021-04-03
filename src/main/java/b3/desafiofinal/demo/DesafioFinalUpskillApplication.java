@@ -51,11 +51,8 @@ public class DesafioFinalUpskillApplication {
 				i++;
 			}
 			/*
-
-			for (int j = 0; j < 20; j++) {
+			for (int j = 0; j < 5; j++) {
 				Pergunta pergunta = engineService.getNextQuestion("fácil");
-				System.out.println(pergunta);
-				System.out.println(Arrays.toString(engineService.helpFighty(pergunta)));
 			}*/
 		};
 	}
