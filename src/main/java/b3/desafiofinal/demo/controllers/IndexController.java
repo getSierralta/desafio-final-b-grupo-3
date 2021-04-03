@@ -9,7 +9,7 @@ public class IndexController {
 
     @GetMapping(value = "/")
     public String index(ModelMap map){
-        map.addAttribute("name", "Max");
+        map.addAttribute("name", "Desafio Upskill");
         return "index";
     }
 }

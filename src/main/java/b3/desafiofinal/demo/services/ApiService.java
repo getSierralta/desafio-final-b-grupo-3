@@ -51,4 +51,12 @@ public class ApiService {
         ResponseEntity<Perguntas> responseEntity = restTemplate.getForEntity(external, Perguntas.class);
         return responseEntity.getBody();
     }
+
+
+    public String getTotalPerguntas() {
+        String total= getEstatistica().getTotal();
+
+        return total;
+
+    }
 }

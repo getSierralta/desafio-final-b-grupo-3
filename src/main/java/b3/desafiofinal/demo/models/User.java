@@ -80,4 +80,11 @@ public class User implements UserDetails {
     }
 
 
+    public String getProfilePicture(){
+        if(profilePicture==null){
+            return"/img/palm.png";
+        }else{
+            return profilePicture;
+        }
+    }
 }

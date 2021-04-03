@@ -41,4 +41,6 @@ public interface UserService {
 
     //adiciona o score ao currentScore e devolve o score atual
     long addScore(User loggedUser, int difficulty, long timeLeft);
+
+    List<User> getPlayers();
 }
