@@ -17,13 +17,13 @@
              </ul>
              <img class="logo_question" src="../img/logo.png" alt="Logo"/>
              <div class="button_list">
-                 <button class="retro_button">
-                   <img src="../img/5050.png" width="100" height="35" alt="5050"/>
+                 <button class="retro_button" onclick="cincuenta()" >
+                   <img src="../img/5050.png" width="100" height="35" alt="5050" />
                  </button>
-                 <button class="retro_button">
+                 <button class="retro_button" onclick="trocar()">
                    <img src="../img/switch.png" width="100" height="35" alt="Switch"/>
                  </button>
-                 <button class="retro_button">
+                 <button class="retro_button" onclick="help()">
                    <img src="../img/public.png" width="100" height="35" alt="Public Help"/>
                  </button>
                  <button class="retro_button">
@@ -38,16 +38,16 @@
              </div>
          </div>
          <div class="answer_box">
-             <div class="option_box" onclick="resposta(${pergunta.getCerta()}, '${pergunta.getShuffle().get(0)}', '${pergunta.getResposta1()}', '${pergunta.getResposta2()}', '${pergunta.getResposta3()}', '${pergunta.getResposta4()}', '${pergunta.getDificuldade()}')">
+             <div id="a" class="option_box" onclick="resposta(${pergunta.getCerta()}, '${pergunta.getShuffle().get(0)}', '${pergunta.getResposta1()}', '${pergunta.getResposta2()}', '${pergunta.getResposta3()}', '${pergunta.getResposta4()}', '${pergunta.getDificuldade()}')">
                  <div class="answer">A: ${pergunta.getShuffle().get(0)}</div>
              </div>
-             <div class="option_box" onclick="resposta(${pergunta.getCerta()}, '${pergunta.getShuffle().get(1)}', '${pergunta.getResposta1()}', '${pergunta.getResposta2()}', '${pergunta.getResposta3()}', '${pergunta.getResposta4()}', '${pergunta.getDificuldade()}')">
+             <div id="b" class="option_box" onclick="resposta(${pergunta.getCerta()}, '${pergunta.getShuffle().get(1)}', '${pergunta.getResposta1()}', '${pergunta.getResposta2()}', '${pergunta.getResposta3()}', '${pergunta.getResposta4()}', '${pergunta.getDificuldade()}')">
                  <div class="answer">B: ${pergunta.getShuffle().get(1)} </div>
              </div>
-             <div class="option_box" onclick="resposta(${pergunta.getCerta()}, '${pergunta.getShuffle().get(2)}', '${pergunta.getResposta1()}', '${pergunta.getResposta2()}', '${pergunta.getResposta3()}', '${pergunta.getResposta4()}', '${pergunta.getDificuldade()}')">
+             <div id="c" class="option_box" onclick="resposta(${pergunta.getCerta()}, '${pergunta.getShuffle().get(2)}', '${pergunta.getResposta1()}', '${pergunta.getResposta2()}', '${pergunta.getResposta3()}', '${pergunta.getResposta4()}', '${pergunta.getDificuldade()}')">
                  <div class="answer">C: ${pergunta.getShuffle().get(2)}</div>
              </div>
-             <div class="option_box" onclick="resposta(${pergunta.getCerta()}, '${pergunta.getShuffle().get(3)}', '${pergunta.getResposta1()}', '${pergunta.getResposta2()}', '${pergunta.getResposta3()}', '${pergunta.getResposta4()}', '${pergunta.getDificuldade()}')">
+             <div id="d" class="option_box" onclick="resposta(${pergunta.getCerta()}, '${pergunta.getShuffle().get(3)}', '${pergunta.getResposta1()}', '${pergunta.getResposta2()}', '${pergunta.getResposta3()}', '${pergunta.getResposta4()}', '${pergunta.getDificuldade()}')">
                  <div class="answer">D: ${pergunta.getShuffle().get(3)}</div>
              </div>
          </div>

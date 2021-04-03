@@ -26,11 +26,9 @@ public class CustomAuthenticatorProvider implements AuthenticationProvider {
 
         String name = authentication.getName();
         String password = authentication.getCredentials().toString();
-
+        
         User user = userService.authenticate(name, password);
 
-        System.out.println("username: "+name+"\npassword: "+password);
-        System.out.println("O user logado é: "+user);
         if (user!=null) {
 
             List<GrantedAuthority> roleList = new ArrayList<>();

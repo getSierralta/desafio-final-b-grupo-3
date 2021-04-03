@@ -25,4 +25,5 @@ public class NewQuestionController {
         //modelAndView.setViewName("/new-question");
         return new RedirectView("/new-question");
     }
+
 }

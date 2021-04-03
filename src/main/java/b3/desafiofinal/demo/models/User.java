@@ -1,8 +1,10 @@
 package b3.desafiofinal.demo.models;
 
 import b3.desafiofinal.demo.domains.Pergunta;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -41,6 +43,11 @@ public class User implements UserDetails {
     private boolean usedPublicHelp;
     private boolean usedChangeQuestion;
     private int numberOfQuestionsAnswered;
+
+    @OneToOne
+    private Pergunta pergunta;
+
+
 
 
     @OneToOne

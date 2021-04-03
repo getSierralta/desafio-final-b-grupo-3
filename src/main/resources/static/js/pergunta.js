@@ -1,3 +1,92 @@
+function cincuenta(){
+    const a = document.getElementById("a");
+    const b = document.getElementById("b");
+    const c = document.getElementById("c");
+    const d = document.getElementById("d");
+    a.style.opacity = 0;
+    b.style.opacity = 0;
+    c.style.opacity = 0;
+    d.style.opacity = 0;
+    const aA = a.innerText.split("A: ");
+    const bA = b.innerText.split("B: ");
+    const cA = c.innerText.split("C: ");
+    const dA = d.innerText.split("D: ");
+    fetch(`http://localhost:8080/api/cincuenta/${aA[1]}/${bA[1]}/${cA[1]}/${dA[1]}`)
+    .then(response => response.json())
+    .then(data =>         
+            data.forEach(element => { 
+               if(element === "a"){
+                    a.style.opacity = 1;
+               }else if(element === "b"){
+                    b.style.opacity = 1;
+                }else if(element === "c"){
+                    c.style.opacity = 1;
+                }else if(element === "d"){
+                    d.style.opacity = 1;
+                }
+            })
+        );  
+}
+function trocar(){
+    const xhr = new XMLHttpRequest();
+    xhr.onload = function(event){ 
+        window.location.reload();
+    }; 
+    xhr.open("GET", '/trocarPergunta'); 
+    xhr.send();
+}
+function help(){
+    console.log("help");
+}
+
+
+function resposta(certa, res, res1, res2, res3, res4, dif){
+
+    let correcta;
+    switch(certa){
+        case 1:
+            correcta = res1;
+            break;
+        case 2:
+            correcta = res2;
+            break;
+        case 3:
+            correcta = res3;
+            break;
+        case 4:
+            correcta = res4;
+            break;
+    }
+    switch(dif){
+        case "fácil":
+           dif = 1;
+            break;
+        case "média":
+            dif = 2;
+            break;
+        case "difícil":
+            dif = 3;
+            break;
+        case "impossível":
+            dif = 4;
+            break;
+    }
+    const xhr = new XMLHttpRequest();
+    let url;
+    if(res == correcta){
+        url = `/answerQuestion/${dif}/10`;
+        xhr.onload = function(event){ 
+            window.location.reload();
+        }; 
+    }else{
+        url = `/loser`;
+        xhr.onload = function(event){ 
+            window.location.replace("http://localhost:8080/loserPage"); 
+        }; 
+    }
+    xhr.open("POST", url); 
+    xhr.send();
+}
 function setList(){
     const list = document.getElementById("list");
     const num = document.title;
@@ -137,53 +226,5 @@ function setList(){
     list.appendChild(tres);
     list.appendChild(dos);
     list.appendChild(um);    
-}
-
-function resposta(certa, res, res1, res2, res3, res4, dif){
-
-    let correcta;
-    switch(certa){
-        case 1:
-            correcta = res1;
-            break;
-        case 2:
-            correcta = res2;
-            break;
-        case 3:
-            correcta = res3;
-            break;
-        case 4:
-            correcta = res4;
-            break;
-    }
-    switch(dif){
-        case "fácil":
-           dif = 1;
-            break;
-        case "média":
-            dif = 2;
-            break;
-        case "difícil":
-            dif = 3;
-            break;
-        case "impossível":
-            dif = 4;
-            break;
-    }
-    const xhr = new XMLHttpRequest();
-    let url;
-    if(res == correcta){
-        url = `/answerQuestion/${dif}/10`;
-        xhr.onload = function(event){ 
-            window.location.reload();
-        }; 
-    }else{
-        url = `/loser`;
-        xhr.onload = function(event){ 
-            window.location.replace("http://localhost:8080/loserPage"); 
-        }; 
-    }
-    xhr.open("POST", url); 
-    xhr.send();
 }
 setList();

@@ -3,6 +3,7 @@ package b3.desafiofinal.demo.services;
 import b3.desafiofinal.demo.models.Highscore;
 import b3.desafiofinal.demo.repositories.ConfirmationTokenRepository;
 import b3.desafiofinal.demo.repositories.PasswordResetTokenRepository;
+import b3.desafiofinal.demo.repositories.PerguntaRepository;
 import b3.desafiofinal.demo.repositories.UserRepository;
 import b3.desafiofinal.demo.models.ConfirmationToken;
 import b3.desafiofinal.demo.models.PasswordResetToken;
@@ -36,6 +37,8 @@ public class UserServiceImpl implements UserService{
     PasswordResetTokenRepository passwordResetTokenRepository;
     @Autowired
     JavaMailSender mailSender;
+    @Autowired
+    PerguntaRepository perguntaRepository;
 
 
     @Override
@@ -204,6 +207,15 @@ public class UserServiceImpl implements UserService{
         user.setUsedChangeQuestion(false);
         user.setUsedPublicHelp(false);
         user.setNumberOfQuestionsAnswered(0);
+        try {
+            if (user.getPergunta() != null){
+                perguntaRepository.delete(user.getPergunta());
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        user.setPergunta(null);
         userRepository.save(user);
     }
 
@@ -222,6 +234,14 @@ public class UserServiceImpl implements UserService{
         }
         user.setCurrentScore(user.getCurrentScore()+score);
         user.setNumberOfQuestionsAnswered(user.getNumberOfQuestionsAnswered()+1);
+        try {
+            if (user.getPergunta() != null){
+                perguntaRepository.delete(user.getPergunta());
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        user.setPergunta(null);
         userRepository.save(user);
         return user.getCurrentScore();
     }
