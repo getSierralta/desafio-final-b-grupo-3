@@ -357,13 +357,13 @@ ui-button {
 
 .recover-img {
     margin-top: 0.2rem;
-    height: 120px;
+    height: 80px;
     width: 80%;
     border-style: inset;
 }
 
 .recover-img img{
-    height: 120px;
+    height: 80px;
     width: 100%;
     object-fit: cover;
 }
