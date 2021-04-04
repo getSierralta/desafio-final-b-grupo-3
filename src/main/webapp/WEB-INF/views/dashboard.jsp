@@ -80,14 +80,14 @@
                     </div>
             </div>
         </div>
-        <div class="popup-login" title="Nova Pergunta">
-                <div class="login-img-wrapper">
-                    <div class="login-img">
-                        <img src="../img/login_pic.png" alt="Login Image"/>
+        <div class="popup-question" title="Nova Pergunta">
+                <div class="question-img-wrapper">
+                    <div class="question-img">
+                        <img src="../img/submit_question.png" alt="Login Image"/>
                     </div>
                 </div>
-                <div class="login-form">
-                    <form id="login" method="post" action="/new-question/register" id="login">
+                <div class="question-form">
+                    <form id="question" method="post" action="/new-question/register" id="login">
                         <label for="pergunta">Pergunta:</label><br>
                         <input type="text" name="pergunta" required="required" />
                         <label for="username">Resposta 1:</label><br>
