@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+@font-face {
+    font-family: 'ArtDystopia';
+    src:  url("../fonts/artdystopia-webfont.woff" ) format('woff'),
+    url("../fonts/artdystopia-webfont.woff2") format('woff2');
+}
+
+html, body {
+    height: 100%;
+    background: url("../img/bg4.gif" )rgba(74,30,107, 0.7) ;
+    background-size: cover;
+    background-blend-mode: color;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.option {
+    height: 8rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+}
+
+.infoGame{
+    height: 8rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: 'ArtDystopia', Fallback, Inconsolata;
+    font-size: 3rem;
+    color: white;
+}
+
+.infoGame a{
+    text-decoration: none;
+    color: white;
+}
+.infoGame a:hover{
+    color: black;
+}
+
+.infoLoser{
+    height: 8rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: 'ArtDystopia', Fallback, Inconsolata;
+    font-size: 3.5rem;
+    color: #ff00dd;
+    text-align: center;
+}
+
+.infoGame:hover .menu_title {
+    filter: invert(100%) drop-shadow(0 0 1.5rem var(--color-white));
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+.infoGame:hover .left_hand {
+    transition: .2s ease-in-out;
+    opacity: 1;
+}
+
+.infoGame:active .menu_title {
+    color: var(--color-white);
+    filter: drop-shadow(0 0 1.5rem var(--color-white));
+}
+
+.infoGame:hover .right_hand {
+    transition: .2s ease-in-out;
+    opacity: 1;
+}
+
+.infoGame:active .left_hand {
+    content:url(../img/hand2.png);
+}
+
+.infoGame:active .right_hand {
+    content:url(../img/hand2.png);
+}

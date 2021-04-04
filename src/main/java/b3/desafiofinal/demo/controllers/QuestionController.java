@@ -65,4 +65,16 @@ public class QuestionController {
         return "loserPage";
     }
 
+    @GetMapping(value="/winnerPage")
+    @PreAuthorize("hasRole('ROLE_USER')")
+    public String winner(){
+        return "winnerPage";
+    }
+
+    @GetMapping(value="/error")
+    @PreAuthorize("hasRole('ROLE_USER')")
+    public String error(){
+        return "error";
+    }
+
 }
