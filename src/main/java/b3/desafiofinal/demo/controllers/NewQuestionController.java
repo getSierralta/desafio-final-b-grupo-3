@@ -23,7 +23,7 @@ public class NewQuestionController {
         apiService.criarPergunta(perguntaRequest);
         //ModelAndView modelAndView = new ModelAndView();
         //modelAndView.setViewName("/new-question");
-        return new RedirectView("/new-question");
+        return new RedirectView("/dashboard");
     }
 
 }

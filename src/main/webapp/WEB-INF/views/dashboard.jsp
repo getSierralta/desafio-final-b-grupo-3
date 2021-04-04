@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,6 +38,11 @@
                     <img id="rank" class="menu_title" src="../img/rank.svg" alt="Ranking"/>
                     <div class="right_hand"></div>
                 </div>
+               <div class="option">
+                   <div class="left_hand"></div>
+                    <p id="login" class="menu_title" > New Question</p>
+                   <div class="right_hand"></div>
+               </div>
                 <div class="option">
                     <div class="left_hand"></div>
                     <a href="<c:url value="/logout" />">Quit</a>
@@ -74,6 +80,32 @@
                     </div>
             </div>
         </div>
+        <div class="popup-login" title="Nova Pergunta">
+                <div class="login-img-wrapper">
+                    <div class="login-img">
+                        <img src="../img/login_pic.png" alt="Login Image"/>
+                    </div>
+                </div>
+                <div class="login-form">
+                    <form id="login" method="post" action="/new-question/register" id="login">
+                        <label for="pergunta">Pergunta:</label><br>
+                        <input type="text" name="pergunta" required="required" />
+                        <label for="username">Resposta 1:</label><br>
+                        <input type="text" name="r1" required="required" />
+                        <label for="username">Resposta 2:</label><br>
+                        <input type="text" name="r2" required="required" />
+                        <label for="username">Resposta 3:</label><br>
+                        <input type="text" name="r3" required="required" />
+                        <label for="username">Resposta 4:</label><br>
+                        <input type="text" name="r4" required="required" />
+                        <label for="username">Nº Resposta certa:</label><br>
+                        <input type="text" name="certa" required="required" />
+                        <label for="username">Nível de dificuldade:</label><br>
+                        <input type="text" name="dificuldade" required="required" />
+                        <input class="submit-button" type="submit" value_"Submit">
+                    </form>
+                </div>
+            </div>
     </div>
     <script src="../js/popup.js"></script>
 </body>
