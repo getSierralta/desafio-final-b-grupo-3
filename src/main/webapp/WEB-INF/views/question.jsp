@@ -4,6 +4,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/loser_style.css">
     <link rel="stylesheet" href="../css/question_style.css">
@@ -27,7 +29,7 @@
                    <img src="../img/public.png" width="100" height="35" alt="Public Help"/>
                  </button>
                  <button class="retro_button">
-                   <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank"><img src="../img/hope.png" width="100" height="35" alt="Hope"/></a>
+                   <img id="hope" src="../img/hope.png" width="100" height="35" alt="Hope"/>
                  </button>
              </div>
          </div>
@@ -57,6 +59,14 @@
              <div class="right_hand"></div>
          </div>
     </div>
+    <div class="popup" title="Hope">
+        <div class="pop-body">
+            <video id="give-me-hope" loop>
+                <source src="../video/hope.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
     <script src="../js/pergunta.js"></script>
+    <script src="../js/hope.js"></script>
 </body>
 </html>

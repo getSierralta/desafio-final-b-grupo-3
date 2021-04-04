@@ -40,7 +40,7 @@
                 <input type="text" id="username" name="username" required><br>
                 <label for="password">Password:</label><br>
                  <input type="password" id="password" name="password" required>
-                <input class="submit-button" type="submit" value_"Submit">
+                <input id="login-yes" class="submit-button" type="submit" value_"Submit">
             </form>
         </div>
     </div>

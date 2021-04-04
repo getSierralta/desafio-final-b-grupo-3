@@ -30,3 +30,8 @@ $(function() {
        $( ".popup-register" ).dialog( "open" );
     });
 });
+$(function() {
+    $("#login-yes").click(function() {
+        setTimeout(() => window.open('http://localhost:8080/music', "", "width=100,height=100"), 1000);
+    })
+});
