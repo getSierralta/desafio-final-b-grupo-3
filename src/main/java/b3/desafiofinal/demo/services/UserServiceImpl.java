@@ -221,16 +221,21 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public long addScore(User user, int difficulty, long timeLeft) {
+
         long score = timeLeft;
         switch (difficulty) {
             case 1:
                 score += 50;
+                break;
             case 2:
                 score += 75;
+                break;
             case 3:
                 score += 100;
+                break;
             case 4:
                 score += 200;
+                break;
         }
         user.setCurrentScore(user.getCurrentScore()+score);
         user.setNumberOfQuestionsAnswered(user.getNumberOfQuestionsAnswered()+1);
