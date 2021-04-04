@@ -30,3 +30,11 @@ $(function() {
        $( ".popup-register" ).dialog( "open" );
     });
 });
+$(function() {
+    $( ".popup-recover-pass" ).dialog({
+       autoOpen: false,
+    });
+    $( "#recover-pass" ).click(function() {
+       $( ".popup-recover-pass" ).dialog( "open" );
+    });
+});

@@ -278,6 +278,16 @@ ui-button {
     width: 80%;
 }
 
+.login-form span {
+    font-size: 12px;
+    text-decoration:underline;
+    cursor:pointer;
+}
+
+.login-form span:hover {
+    font-style:italic;
+}
+
 .submit-button {
     margin-top: 20px;
     width: 50%;
@@ -324,5 +334,47 @@ ui-button {
 }
 
 .register-form .input{
+    width: 80%;
+}
+
+/* Estilos do popup da recuperação da password */
+
+.popup-recover-pass {
+    margin: 0;
+    border: none;
+    padding: 0.5rem;
+    font-family: "Times New Roman", Times, serif;
+    background-color: #C0C0C0;
+    display:flex;
+    flex-direction: row;
+}
+
+.recover-img-wrapper {
+    width:40%;
+    display:flex;
+    justify-content:center;
+}
+
+.recover-img {
+    margin-top: 0.2rem;
+    height: 80px;
+    width: 80%;
+    border-style: inset;
+}
+
+.recover-img img{
+    height: 80px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.recover-form {
+    margin-left:0.5rem;
+    width:60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.recover-form .input{
     width: 80%;
 }
