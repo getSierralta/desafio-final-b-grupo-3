@@ -39,7 +39,8 @@
                 <label for="username">E-mail:</label><br>
                 <input type="text" id="username" name="username" required><br>
                 <label for="password">Password:</label><br>
-                 <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" required>
+                <span id="recover-pass">Forgotten your password?</span>
                 <input class="submit-button" type="submit" value_"Submit">
             </form>
         </div>
@@ -62,6 +63,20 @@
                     <input class="input" type="password" id="password" name="password" required><br>
                     <label for="password">Confirm Password:</label><br>
                     <input class="input" type="password" id="password" name="confirmPassword" required><br>
+                    <input class="submit-button" type="submit" value_"Submit">
+                </form>
+            </div>
+    </div>
+    <div class="popup-recover-pass" title="Recover Password">
+            <div class="recover-img-wrapper">
+                <div class="recover-img">
+                    <img src="../img/recover_pic.png" alt="Recover Image"/>
+                </div>
+            </div>
+            <div class="recover-form">
+                <form id="recover" method="recover" action="/esqueciPassword" id="recover">
+                    <label for="username">E-mail:</label><br>
+                    <input type="text" id="username" name="username" required><br>
                     <input class="submit-button" type="submit" value_"Submit">
                 </form>
             </div>
