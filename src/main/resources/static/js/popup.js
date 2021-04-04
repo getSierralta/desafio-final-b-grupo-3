@@ -7,6 +7,14 @@ $(function() {
     });
 });
 $(function() {
+    $( ".popupHighscore" ).dialog({
+        autoOpen: false,
+    });
+    $( "#highscore" ).click(function() {
+        $( ".popupHighscore" ).dialog( "open" );
+    });
+});
+$(function() {
     $( ".popup-login" ).dialog({
        autoOpen: false,
     });
@@ -20,5 +28,13 @@ $(function() {
     });
     $( "#register" ).click(function() {
        $( ".popup-register" ).dialog( "open" );
+    });
+});
+$(function() {
+    $( ".popup-recover-pass" ).dialog({
+       autoOpen: false,
+    });
+    $( "#recover-pass" ).click(function() {
+       $( ".popup-recover-pass" ).dialog( "open" );
     });
 });

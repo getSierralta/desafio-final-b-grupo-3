@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../../css/style.css">
     <title>Hello ${name}!</title>
 </head>
@@ -35,10 +36,11 @@
         </div>
         <div class="login-form">
             <form id="login" method="post" action="/login" id="login">
-                <label for="email">E-mail:</label><br>
-                <input type="text" id="username" name="username"><br>
+                <label for="username">E-mail:</label><br>
+                <input type="text" id="username" name="username" required><br>
                 <label for="password">Password:</label><br>
-                 <input type="password" id="password" name="password">
+                <input type="password" id="password" name="password" required>
+                <span id="recover-pass">Forgot your password?</span>
                 <input class="submit-button" type="submit" value_"Submit">
             </form>
         </div>
@@ -52,15 +54,29 @@
             <div class="register-form">
                 <form id="register" action="/register" method="post">
                     <label for="fname">Name:</label><br>
-                    <input class="input" type="text" id="fname" name="name"><br>
+                    <input class="input" type="text" id="fname" name="name" required><br>
                     <label for="password">Email:</label><br>
-                    <input class="input" type="text" id="lname" name="username"><br>
+                    <input class="input" type="text" id="lname" name="username" required><br>
                     <label for="password">City:</label><br>
-                    <input class="input" type="text" id="city" name="city"><br>
+                    <input class="input" type="text" id="city" name="city" required><br>
                     <label for="password">Password:</label><br>
-                    <input class="input" type="password" id="password" name="password"><br>
+                    <input class="input" type="password" id="password" name="password" required><br>
                     <label for="password">Confirm Password:</label><br>
-                    <input class="input" type="password" id="password" name="confirmPassword"><br>
+                    <input class="input" type="password" id="password" name="confirmPassword" required><br>
+                    <input class="submit-button" type="submit" value_"Submit">
+                </form>
+            </div>
+    </div>
+    <div class="popup-recover-pass" title="Recover Password">
+            <div class="recover-img-wrapper">
+                <div class="recover-img">
+                    <img src="../img/recover_pic.png" alt="Recover Image"/>
+                </div>
+            </div>
+            <div class="recover-form">
+                <form id="recover" method="recover" action="/esqueciPassword" id="recover">
+                    <label for="username">E-mail:</label><br>
+                    <input type="text" id="username" name="username" required><br>
                     <input class="submit-button" type="submit" value_"Submit">
                 </form>
             </div>

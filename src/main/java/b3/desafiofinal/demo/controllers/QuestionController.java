@@ -12,23 +12,39 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.view.RedirectView;
+
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
 public class QuestionController {
 
+    @Autowired
     UserService userService;
+    @Autowired
     HighscoreService highscoreService;
     private final EngineService engineService;
 
     @GetMapping(value = "/question")
     @PreAuthorize("hasRole('ROLE_USER')")
-    public String index(ModelMap map) throws Exception {
-        //User user = userService.getLoggedUser();
-        //map.addAttribute("pergunta", engineService.getNextQuestion(user));
-        //map.addAttribute("perguntaN", user.getNumberOfQuestionsAnswered());
+    public String question(ModelMap map) throws Exception {
+        User user = userService.getLoggedUser();
+        map.addAttribute("pergunta", engineService.getNextQuestion(user));
+        map.addAttribute("perguntaN", user.getNumberOfQuestionsAnswered());
         return "question";
     }
+
+    @GetMapping(value = "/trocarPergunta")
+    @PreAuthorize("hasRole('ROLE_USER')")
+    public String anotherQuestion(ModelMap map) throws Exception {
+        User user = userService.getLoggedUser();
+        map.addAttribute("pergunta", engineService.getAnotherQuestion(user));
+        map.addAttribute("perguntaN", user.getNumberOfQuestionsAnswered());
+        return "question";
+    }
+
+
 
 
     @GetMapping(value= "/new-question")
@@ -38,25 +54,28 @@ public class QuestionController {
     }
 
     //post mapping para adicionar pontuação da pergunta, considerando o tempo restante e a dificuldade da pergunta
-    @PostMapping(value="/answerQuestion/{info}")
+    @PostMapping("/answerQuestion/{dif}/{time}")
     @PreAuthorize("hasRole('ROLE_USER')")
-    public String calculateScore(@PathVariable(name="info") String info){
-        String[] infoSplit=info.split(":");
-        int difficulty= Integer.parseInt(infoSplit[0]);
-        long timeLeft= Long.parseLong(infoSplit[1]);
+    public RedirectView calculateScore(@PathVariable int dif, @PathVariable int time){
         //metodo que devolve o score atual do jogador ja considerando esta resposta
-        long currentScore=userService.addScore(userService.getLoggedUser(), difficulty,timeLeft);
-        return "gamePage";
+        long currentScore = userService.addScore(userService.getLoggedUser(), dif,time);
+        return new RedirectView("/question");
     }
 
     //getMapping quando o utilizador perde
-    @GetMapping(value="/loser")
+    @PostMapping(value="/loser")
     @PreAuthorize("hasRole('ROLE_USER')")
-    public String loserPage(){
-        /*User user=userService.getLoggedUser();
+    public RedirectView loserPage(){
+        User user=userService.getLoggedUser();
         highscoreService.saveHighscore(user.getCurrentScore(),user);
-        userService.clearCurrentGameInfo(user);*/
-        return"loserPage";
+        userService.clearCurrentGameInfo(user);
+        return new RedirectView("loserPage");
+    }
+
+    @GetMapping(value="/loserPage")
+    @PreAuthorize("hasRole('ROLE_USER')")
+    public String loser(){
+        return "loserPage";
     }
 
 }

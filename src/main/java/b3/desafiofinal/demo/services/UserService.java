@@ -2,8 +2,6 @@ package b3.desafiofinal.demo.services;
 
 import b3.desafiofinal.demo.models.Highscore;
 import b3.desafiofinal.demo.models.User;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -45,4 +43,6 @@ public interface UserService {
 
     //adiciona o score ao currentScore e devolve o score atual
     long addScore(User loggedUser, int difficulty, long timeLeft);
+
+    List<User> getPlayers();
 }

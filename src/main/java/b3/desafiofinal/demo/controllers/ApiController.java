@@ -5,6 +5,8 @@ import b3.desafiofinal.demo.domains.Perguntas;
 import b3.desafiofinal.demo.requests.StatusResponse;
 import b3.desafiofinal.demo.requests.PerguntaRequest;
 import b3.desafiofinal.demo.services.ApiService;
+import b3.desafiofinal.demo.services.EngineService;
+import b3.desafiofinal.demo.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 public class ApiController {
     private final ApiService apiService;
+    private final UserService userService;
+    private final EngineService engineService;
 
     /*
     Criar nova pergunta
@@ -32,6 +36,14 @@ public class ApiController {
     @GetMapping("/estatistica")
     public ResponseEntity<Perguntas> getEstatisticas(){
         return ResponseEntity.ok(apiService.getEstatistica());
+    }
+
+
+    // Isto esta aqui bue tipo nao a toa mas tipo precisava um rest controller :(
+    @GetMapping(value =  "/cincuenta/{a}/{b}/{c}/{d}")
+    @PreAuthorize("hasRole('ROLE_USER')")
+    public String[] getCincuenta(@PathVariable String a, @PathVariable String b,  @PathVariable String c, @PathVariable String d){
+        return engineService.helpFighty(userService.getLoggedUser(), userService.getLoggedUser().getPergunta(), a, b, c, d);
     }
 
 }

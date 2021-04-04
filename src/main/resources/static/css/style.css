@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&display=swap');
+@font-face {
+    font-family: 'ArtDystopia';
+    src:  url("../fonts/artdystopia-webfont.woff" ) format('woff'),
+    url("../fonts/artdystopia-webfont.woff2") format('woff2');
+}
 
 :root {
     --color-dark: #160546;
@@ -69,6 +74,17 @@ html, body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    color: white;
+    font-size: 3.5rem;
+    font-family: 'ArtDystopia', Fallback, Inconsolata;
+}
+
+.option a{
+    text-decoration: none;
+    color: white;
+}
+.option a:hover{
+    color: black;
 }
 
 .menu_title {
@@ -135,18 +151,43 @@ html, body {
     padding: 0 1rem 0 1rem;
 }
 
+.popupHighscore {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+
+}
+
+.popupHighscore > * {
+    display: flex;
+    padding: 0 1rem 0 1rem;
+}
+
 .ui-widget-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 0.5rem 0 0.5rem;
+    padding: 0 1rem 0 1rem;
     margin: 0;
     height: 2rem;
     font-family: 'Inconsolata', monospace;
+    color: var(--color-white);
+    border: none;
+    background: linear-gradient(to right, var(--color-dark) , var(--color-primary));
+}
+
+ui-button {
+    background: #C0C0C0;
+    border-style: outset;
+}
+
+.ui-widget {
+    border-style: outset;
 }
 
 .pop-body {
     margin: 0;
+    border: none;
     background-color: var(--color-grey);
     flex-direction: column;
     font-family: "Times New Roman", Times, serif;
@@ -159,10 +200,18 @@ html, body {
     gap: 0.3rem;
 }
 
+.profile-pic-wrapper {
+    border-style:inset;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+}
+
 .profile-pic {
     border-radius: 50%;
     width: 2rem;
     height: 2rem;
+    object-fit:cover;
 }
 
 /* you spin me right round baby right round like a record baby right round round round */
@@ -186,4 +235,146 @@ html, body {
     50% { text-shadow: 0 0 var(--color-white); }
     75% { text-shadow: -1px 0 var(--color-white), -2px 0 var(--color-white), -3px 0 var(--color-white), -4px 0 var(--color-white), -5px 0 var(--color-white); }
     100% { text-shadow: 0 0 var(--color-white); }
+}
+
+/* Estilos do popup do login */
+
+.popup-login {
+    margin: 0;
+    border: none;
+    padding: 0.5rem;
+    font-family: "Times New Roman", Times, serif;
+    background-color: #C0C0C0;
+    display:flex;
+    flex-direction: row;
+}
+
+.login-img-wrapper {
+    width:40%;
+    display:flex;
+    justify-content:center;
+}
+
+.login-img {
+    height: 100px;
+    width: 80%;
+    border-style: inset;
+}
+
+.login-img img{
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.login-form {
+    margin-left:0.5rem;
+    width:60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form .input{
+    width: 80%;
+}
+
+.login-form span {
+    font-size: 12px;
+    text-decoration:underline;
+    cursor:pointer;
+}
+
+.login-form span:hover {
+    font-style:italic;
+}
+
+.submit-button {
+    margin-top: 20px;
+    width: 50%;
+    background-color: #C0C0C0;
+    border-style: outset;
+}
+
+/* Estilos do popup do registo */
+
+.popup-register {
+    margin: 0;
+    border: none;
+    padding: 0.5rem;
+    font-family: "Times New Roman", Times, serif;
+    background-color: #C0C0C0;
+    display:flex;
+    flex-direction: row;
+}
+
+.register-img-wrapper {
+    width:40%;
+    display:flex;
+    justify-content:center;
+}
+
+.register-img {
+    margin-top: 1rem;
+    height: 120px;
+    width: 80%;
+    border-style: inset;
+}
+
+.register-img img{
+    height: 120px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.register-form {
+    margin-left:0.5rem;
+    width:60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.register-form .input{
+    width: 80%;
+}
+
+/* Estilos do popup da recuperação da password */
+
+.popup-recover-pass {
+    margin: 0;
+    border: none;
+    padding: 0.5rem;
+    font-family: "Times New Roman", Times, serif;
+    background-color: #C0C0C0;
+    display:flex;
+    flex-direction: row;
+}
+
+.recover-img-wrapper {
+    width:40%;
+    display:flex;
+    justify-content:center;
+}
+
+.recover-img {
+    margin-top: 0.2rem;
+    height: 80px;
+    width: 80%;
+    border-style: inset;
+}
+
+.recover-img img{
+    height: 80px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.recover-form {
+    margin-left:0.5rem;
+    width:60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.recover-form .input{
+    width: 80%;
 }
