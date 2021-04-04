@@ -12,6 +12,7 @@
 <body>
      <div class="wrap">
          <div class="header_question">
+
              <ul class="list" id="list">
 
              </ul>
@@ -29,6 +30,9 @@
                  <button class="retro_button">
                    <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank"><img src="../img/hope.png" width="100" height="35" alt="Hope"/></a>
                  </button>
+                 <div id="safeTimer">
+                    <p id="safeTimerDisplay">00:30</p>
+                  </div>
              </div>
          </div>
          <div class="question_box">

@@ -39,6 +39,11 @@
                 </div>
                 <div class="option">
                     <div class="left_hand"></div>
+                    <a href="/new-question"> New Question</a>
+                    <div class="right_hand"></div>
+                </div>
+                <div class="option">
+                    <div class="left_hand"></div>
                     <a href="<c:url value="/logout" />">Quit</a>
                     <div class="right_hand"></div>
                 </div>

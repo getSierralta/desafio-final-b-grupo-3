@@ -1,3 +1,18 @@
+let set = 20;
+function timer(){
+    var timer = setInterval(function(){
+        document.getElementById('safeTimerDisplay').innerHTML='00:'+sec;
+        sec--;
+        if (sec < 0) {
+            const xhr = new XMLHttpRequest();
+            xhr.onload = function(event){ 
+                window.location.replace("http://localhost:8080/loserPage"); 
+            }; 
+            xhr.open("POST", `/loser`); 
+            xhr.send();
+        }
+    }, 1000);
+}
 function cincuenta(){
     const a = document.getElementById("a");
     const b = document.getElementById("b");
@@ -74,7 +89,7 @@ function resposta(certa, res, res1, res2, res3, res4, dif){
     const xhr = new XMLHttpRequest();
     let url;
     if(res == correcta){
-        url = `/answerQuestion/${dif}/10`;
+        url = `/answerQuestion/${dif}/${sec}`;
         xhr.onload = function(event){ 
             window.location.reload();
         }; 
@@ -140,74 +155,89 @@ function setList(){
 
     if(num == 14){
         quinze.classList.add("dificulty_selected");
+        sec = 60;
     }
     if(num == 13){
         cator.classList.add("dificulty_selected");
+        sec = 40;
     }else if(num > 13){
         cator.classList.add("dificulty_passed");
     }
     if(num == 12){
         trese.classList.add("dificulty_selected");
+        sec = 40;
     }else if(num > 12){
         trese.classList.add("dificulty_passed");
     }
     if(num == 11){
         dose.classList.add("dificulty_selected");
+        sec = 40;
     }else if(num > 11){
         dose.classList.add("dificulty_passed");
     }
     if(num == 10){
         once.classList.add("dificulty_selected");
+        sec = 40;
     }else if(num > 10){
         once.classList.add("dificulty_passed");
     }
     if(num == 9){
         dez.classList.add("dificulty_selected");
+        sec = 40;
     }else if(num > 9){
         dez.classList.add("dificulty_passed");
     }
     if(num == 8){
         nove.classList.add("dificulty_selected");
+        sec = 30;
     }else if(num > 8){
         nove.classList.add("dificulty_passed");
     }
     if(num == 7){
         ocho.classList.add("dificulty_selected");
+        sec = 30;
     }else if(num > 7){
         ocho.classList.add("dificulty_passed");
     }
     if(num == 6){
         sete.classList.add("dificulty_selected");
+        sec = 30;
     }else if(num > 6){
         sete.classList.add("dificulty_passed");
     }
     if(num == 5){
         seis.classList.add("dificulty_selected");
+        sec = 30;
     }else if(num > 5){
         seis.classList.add("dificulty_passed");
     }
     if(num == 4){
         cinco.classList.add("dificulty_selected");
+        sec = 30;
     }else if(num > 4){
         cinco.classList.add("dificulty_passed");
     }
     if(num == 3){
         cuatro.classList.add("dificulty_selected");
+        sec = 20;
     }else if(num > 3){
         cuatro.classList.add("dificulty_passed");
     }
     if(num == 2){
         tres.classList.add("dificulty_selected");
+        sec = 20;
     }else if(num > 2){
         tres.classList.add("dificulty_passed");
     }
     if(num == 1){
         dos.classList.add("dificulty_selected");
+        sec = 20;
     }else if(num > 1){
         dos.classList.add("dificulty_passed");
     }
     if(num == 0){
         um.classList.add("dificulty_selected");
+        sec = 20;
     }else if(num > 0){
         um.classList.add("dificulty_passed");
     }
@@ -225,6 +255,8 @@ function setList(){
     list.appendChild(cuatro);
     list.appendChild(tres);
     list.appendChild(dos);
-    list.appendChild(um);    
+    list.appendChild(um); 
+    console.log(set);
+    timer();   
 }
 setList();
