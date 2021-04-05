@@ -2,6 +2,7 @@ package b3.desafiofinal.demo.securityConfig;
 
 
 import b3.desafiofinal.demo.models.User;
+import b3.desafiofinal.demo.repositories.UserRepository;
 import b3.desafiofinal.demo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -19,6 +20,8 @@ public class CustomAuthenticatorProvider implements AuthenticationProvider {
 
     @Autowired
     UserService userService;
+    @Autowired
+    UserRepository userRepository;
 
     @Override
     public Authentication authenticate(Authentication authentication)
@@ -26,7 +29,7 @@ public class CustomAuthenticatorProvider implements AuthenticationProvider {
 
         String name = authentication.getName();
         String password = authentication.getCredentials().toString();
-        
+        userRepository.dropPerguntas();
         User user = userService.authenticate(name, password);
 
         if (user!=null) {

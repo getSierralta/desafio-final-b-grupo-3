@@ -41,7 +41,7 @@
                 <label for="password">Password:</label><br>
                 <input type="password" id="password" name="password" required>
                 <span id="recover-pass">Forgot your password?</span>
-                <input class="submit-button" type="submit" value_"Submit">
+                <input  id="login-yes" class="submit-button" type="submit" value_"Submit">
             </form>
         </div>
     </div>
@@ -57,8 +57,8 @@
                     <input class="input" type="text" id="fname" name="name" required><br>
                     <label for="password">Email:</label><br>
                     <input class="input" type="text" id="lname" name="username" required><br>
-                    <label for="password">City:</label><br>
-                    <input class="input" type="text" id="city" name="city" required><br>
+                    <label for="password">Country:</label><br>
+                    <input class="input" type="text" id="city" name="country" required><br>
                     <label for="password">Password:</label><br>
                     <input class="input" type="password" id="password" name="password" required><br>
                     <label for="password">Confirm Password:</label><br>
