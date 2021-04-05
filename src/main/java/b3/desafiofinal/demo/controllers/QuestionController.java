@@ -46,10 +46,13 @@ public class QuestionController {
 
 
 
-
     @GetMapping(value= "/new-question")
     @PreAuthorize("hasRole('ROLE_USER')")
     public String showNewQuestionForm() {
+        User user = userService.getLoggedUser();
+        if (engineService.isWinner(user)) {
+            return winner();
+        }
         return "new-question";
     }
 
@@ -83,4 +86,18 @@ public class QuestionController {
         return "loserPage";
     }
 
+    @PostMapping(value="/winner")
+    @PreAuthorize("hasRole('ROLE_USER')")
+    public RedirectView winnerPage(){
+        User user=userService.getLoggedUser();
+        highscoreService.saveHighscore(user.getCurrentScore(),user);
+        userService.clearCurrentGameInfo(user);
+        return new RedirectView("winnerPage");
+    }
+
+    @GetMapping(value="/winnerPage")
+    @PreAuthorize("hasRole('ROLE_USER')")
+    public String winner(){
+        return "winnerPage";
+    }
 }

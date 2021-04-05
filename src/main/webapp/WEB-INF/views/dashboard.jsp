@@ -69,21 +69,21 @@
         </div>
         <div class="popupHighscore" title="Highscore">
             <div class="pop-body">
-                    <div class="rank">
-                        <div class="profile-pic-wrapper"><img class="profile-pic" src="..${user.getProfilePicture()}" alt="Profile Pic"/></div>
-                        <c:if test="${user.getHighscore()==null}">
-                            <p> Your need to play first to see your glorious score ${user.getName()}</p>
-                        </c:if>
-                        <c:if test="${user.getHighscore()!=null}">
+                <div class="rank">
+                    <div class="profile-pic-wrapper"><img class="profile-pic" src="..${user.getProfilePicture()}" alt="Profile Pic"/></div>
+                    <c:if test="${user.getHighscore()==null}">
+                        <p> Your need to play first to see your glorious score ${user.getName()}</p>
+                    </c:if>
+                    <c:if test="${user.getHighscore()!=null}">
                         <p> Your highscore is ${user.getHighscore().getHighscore()} pts</p>
-                        </c:if>
-                    </div>
+                    </c:if>
+                </div>
             </div>
         </div>
         <div class="popup-login" title="Nova Pergunta">
                 <div class="login-img-wrapper">
                     <div class="login-img">
-                        <img src="../img/login_pic.png" alt="Login Image"/>
+                        <img src="../img/submit_question.png" alt="Login Image"/>
                     </div>
                 </div>
                 <div class="login-form">

@@ -213,7 +213,7 @@ public class UserServiceImpl implements UserService{
         }catch (Exception e){
             e.printStackTrace();
         }
-
+        userRepository.dropPerguntas();
         user.setPergunta(null);
         userRepository.save(user);
     }
