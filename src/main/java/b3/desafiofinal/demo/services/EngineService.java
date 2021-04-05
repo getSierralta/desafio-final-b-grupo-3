@@ -57,6 +57,10 @@ public class EngineService {
         return user.getPergunta();
     }
 
+    public boolean isWinner(User user) {
+        return user.getNumberOfQuestionsAnswered() == 15;
+    }
+
     private String getDifficulty(User user){
         switch (user.getNumberOfQuestionsAnswered()){
             case 0:
