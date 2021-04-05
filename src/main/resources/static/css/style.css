@@ -378,3 +378,13 @@ ui-button {
 .recover-form .input{
     width: 80%;
 }
+
+.popup-change-password {
+    margin: 0;
+    border: none;
+    padding: 0.5rem;
+    font-family: "Times New Roman", Times, serif;
+    background-color: #C0C0C0;
+    display:flex;
+    flex-direction: row;
+}

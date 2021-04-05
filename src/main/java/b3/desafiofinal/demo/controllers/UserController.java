@@ -4,6 +4,7 @@ import b3.desafiofinal.demo.models.User;
 import b3.desafiofinal.demo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.ModelAndViewDefiningException;
@@ -26,7 +27,7 @@ public class UserController {
     //getMapping para página de login quando se verifica o email
     @GetMapping(value="/verificarEmail/{token}")
     public ModelAndView verifyEmail(@PathVariable (name="token") String token){
-        ModelAndView mav= new ModelAndView("login");
+        ModelAndView mav= new ModelAndView("index");
         userService.verifyEmail(token, mav);
         return mav;
     }
@@ -34,7 +35,7 @@ public class UserController {
     //PostMapping após solicitar nova senha - campo do formulário - username
     @PostMapping(value="/esqueciPassword")
     public ModelAndView forgotPasswordRequest(@RequestParam String username){
-        ModelAndView mav=new ModelAndView("login");
+        ModelAndView mav=new ModelAndView("index");
         userService.forgotPassword(mav,username);
         return mav;
     }
@@ -48,7 +49,7 @@ public class UserController {
             mav.addObject("username",userService.findUserByPasswordToken(token).getUsername());
             return mav;
         }else{
-            mav.setViewName("esqueciPassword");
+            mav.setViewName("index");
             mav.addObject("tokenError","O link de recuperação de password não é válido");
             return mav;
         }
@@ -57,12 +58,19 @@ public class UserController {
     //postMapping para quando o utilizador muda a password
     @PostMapping(value="/alterarPassword")
     public ModelAndView changePassword(@RequestParam String username, String password, String confirmPassword){
-        ModelAndView mav=new ModelAndView("login");
+        ModelAndView mav=new ModelAndView("index");
         userService.changePassword(mav,username,password,confirmPassword);
         return mav;
     }
 
 
+    @GetMapping(value = "/login")
+    public String login(ModelMap map, @RequestParam(value = "error", defaultValue = "false") boolean loginError){
+        if (loginError) {
+            map.put("errorMessage","O username ou password estão incorrectos");
+        }
+        return "index";
+    }
 
 
 }

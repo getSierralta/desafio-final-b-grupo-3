@@ -38,3 +38,11 @@ $(function() {
        $( ".popup-recover-pass" ).dialog( "open" );
     });
 });
+$(function() {
+    $( ".popup-change-password" ).dialog({
+        autoOpen: false,
+    });
+    $( "#changePassword" ).click(function() {
+        $( ".popup-change-password" ).dialog( "open" );
+    });
+});

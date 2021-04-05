@@ -65,8 +65,10 @@ public class QuestionController {
     //getMapping quando o utilizador perde
     @PostMapping(value="/loser")
     @PreAuthorize("hasRole('ROLE_USER')")
-    public RedirectView loserPage(){
+    public RedirectView loserPage(ModelMap map){
         User user=userService.getLoggedUser();
+        map.put("score", user.getCurrentScore());
+        map.put("name", user.getName().toUpperCase());
         highscoreService.saveHighscore(user.getCurrentScore(),user);
         userService.clearCurrentGameInfo(user);
         return new RedirectView("loserPage");
@@ -74,7 +76,10 @@ public class QuestionController {
 
     @GetMapping(value="/loserPage")
     @PreAuthorize("hasRole('ROLE_USER')")
-    public String loser(){
+    public String loser(ModelMap map){
+        User user=userService.getLoggedUser();
+        map.put("score", user.getCurrentScore());
+        map.put("name", user.getName().toUpperCase());
         return "loserPage";
     }
 

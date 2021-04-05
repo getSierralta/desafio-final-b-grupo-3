@@ -202,7 +202,6 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public void clearCurrentGameInfo(User user) {
-        user.setCurrentScore(0);
         user.setUsedFiftyFifty(false);
         user.setUsedChangeQuestion(false);
         user.setUsedPublicHelp(false);
@@ -222,6 +221,10 @@ public class UserServiceImpl implements UserService{
     @Override
     public long addScore(User user, int difficulty, long timeLeft) {
 
+        if(user.getNumberOfQuestionsAnswered()==0){
+            user.setCurrentScore(0);
+            userRepository.save(user);
+        }
         long score = timeLeft;
         switch (difficulty) {
             case 1:

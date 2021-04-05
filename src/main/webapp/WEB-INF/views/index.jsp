@@ -7,7 +7,8 @@
     <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../../css/style.css">
-    <title>Hello ${name}!</title>
+    <title>Desafio Upskill</title>
+    <script src="../js/popup.js"></script>
 </head>
 <body>
     <div class="wrap">
@@ -36,6 +37,10 @@
         </div>
         <div class="login-form">
             <form id="login" method="post" action="/login" id="login">
+                <span class="errorMessage" style="color:red;"> ${errorMessage}</span>
+                <span class="errorMessage" style="color: red">${verifyMessage}</span>
+                <span class="errorMessage" style="color: red">${tokenError}</span>
+                <span class="errorMessage" style="color: green">${successPasswordChange}</span>
                 <label for="username">E-mail:</label><br>
                 <input type="text" id="username" name="username" required><br>
                 <label for="password">Password:</label><br>
@@ -55,10 +60,12 @@
                 <form id="register" action="/register" method="post">
                     <label for="fname">Name:</label><br>
                     <input class="input" type="text" id="fname" name="name" required><br>
+                    <span class="errorMessage" style="color: #ff0000">${errorMail}</span>
                     <label for="password">Email:</label><br>
                     <input class="input" type="text" id="lname" name="username" required><br>
                     <label for="password">City:</label><br>
                     <input class="input" type="text" id="city" name="city" required><br>
+                    <span class="errorMessage" style="color: red">${errorPassword}</span>
                     <label for="password">Password:</label><br>
                     <input class="input" type="password" id="password" name="password" required><br>
                     <label for="password">Confirm Password:</label><br>
@@ -74,13 +81,13 @@
                 </div>
             </div>
             <div class="recover-form">
-                <form id="recover" method="recover" action="/esqueciPassword" id="recover">
+                <form id="recover" method="post" action="/esqueciPassword" id="recover">
                     <label for="username">E-mail:</label><br>
                     <input type="text" id="username" name="username" required><br>
                     <input class="submit-button" type="submit" value_"Submit">
                 </form>
             </div>
         </div>
-    <script src="../js/popup.js"></script>
+
 </body>
 </html>
