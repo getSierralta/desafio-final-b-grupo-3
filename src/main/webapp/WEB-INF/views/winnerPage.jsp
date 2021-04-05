@@ -16,13 +16,13 @@
         <div class="dash">
             <div>
                 <div class="info" id="spinner">
-                    <p>Score 1000${score}</p>
+                    <p>Score ${score}</p>
                 </div>
                 <img src="../img/dance.gif" style="max-height: 15rem;" alt="Head"/>
             </div>
             <div class="menu">
                 <div class="infoLoser">
-                    <h4>Congratulations PLAYER${name}<br>
+                    <h4>Congratulations ${name}<br>
                         YOU WON</h4>
                 </div>
                 <div class="infoGame">
@@ -43,7 +43,7 @@
             </div>
             <div>
                 <div class="info" id="spinner">
-                    <p>Score 1000${score}</p>
+                    <p>Score ${score}</p>
                 </div>
                 <img src="../img/dance.gif" style="max-height: 15rem; transform: scaleX(-1);" alt="Head"/>
             </div>

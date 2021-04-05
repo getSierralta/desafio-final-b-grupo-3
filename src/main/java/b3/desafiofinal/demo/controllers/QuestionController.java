@@ -49,10 +49,7 @@ public class QuestionController {
     @GetMapping(value= "/new-question")
     @PreAuthorize("hasRole('ROLE_USER')")
     public String showNewQuestionForm() {
-        User user = userService.getLoggedUser();
-        if (engineService.isWinner(user)) {
-            return winner();
-        }
+
         return "new-question";
     }
 
@@ -62,6 +59,10 @@ public class QuestionController {
     public RedirectView calculateScore(@PathVariable int dif, @PathVariable int time){
         //metodo que devolve o score atual do jogador ja considerando esta resposta
         long currentScore = userService.addScore(userService.getLoggedUser(), dif,time);
+        User user = userService.getLoggedUser();
+        if (engineService.isWinner(user)) {
+            return new RedirectView("/winnerPage");
+        }
         return new RedirectView("/question");
     }
 
@@ -97,7 +98,10 @@ public class QuestionController {
 
     @GetMapping(value="/winnerPage")
     @PreAuthorize("hasRole('ROLE_USER')")
-    public String winner(){
+    public String winner(ModelMap map){
+        User user=userService.getLoggedUser();
+        map.put("score", user.getCurrentScore());
+        map.put("name", user.getName().toUpperCase());
         return "winnerPage";
     }
 }
