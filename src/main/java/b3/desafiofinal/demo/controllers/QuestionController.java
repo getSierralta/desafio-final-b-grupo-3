@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
-import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -49,10 +48,6 @@ public class QuestionController {
     @GetMapping(value= "/new-question")
     @PreAuthorize("hasRole('ROLE_USER')")
     public String showNewQuestionForm() {
-        User user = userService.getLoggedUser();
-        if (engineService.isWinner(user)) {
-            return winner();
-        }
         return "new-question";
     }
 
@@ -86,18 +81,15 @@ public class QuestionController {
         return "loserPage";
     }
 
-    @PostMapping(value="/winner")
-    @PreAuthorize("hasRole('ROLE_USER')")
-    public RedirectView winnerPage(){
-        User user=userService.getLoggedUser();
-        highscoreService.saveHighscore(user.getCurrentScore(),user);
-        userService.clearCurrentGameInfo(user);
-        return new RedirectView("winnerPage");
-    }
 
     @GetMapping(value="/winnerPage")
     @PreAuthorize("hasRole('ROLE_USER')")
-    public String winner(){
+    public String winner(ModelMap map){
+        User user = userService.getLoggedUser();
+        highscoreService.saveHighscore(user.getCurrentScore(),user);
+        map.put("score", user.getCurrentScore());
+        map.put("name", user.getName().toUpperCase());
+        userService.clearCurrentGameInfo(user);
         return "winnerPage";
     }
 }

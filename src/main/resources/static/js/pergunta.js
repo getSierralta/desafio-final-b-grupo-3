@@ -1,4 +1,5 @@
 let set = 20;
+let flag = false;
 function timer(){
     var timer = setInterval(function(){
         document.getElementById('safeTimerDisplay').innerHTML='00:'+sec;
@@ -90,9 +91,15 @@ function resposta(certa, res, res1, res2, res3, res4, dif){
     let url;
     if(res == correcta){
         url = `/answerQuestion/${dif}/${sec}`;
-        xhr.onload = function(event){ 
-            window.location.reload();
-        }; 
+        if(flag){           
+            xhr.onload = function(event){ 
+                document.location.href = "/winnerPage";
+            };
+        }else{
+            xhr.onload = function(event){ 
+                window.location.reload();
+            }; 
+        }  
     }else{
         url = `/loser`;
         xhr.onload = function(event){ 
@@ -156,6 +163,7 @@ function setList(){
     if(num == 14){
         quinze.classList.add("dificulty_selected");
         sec = 60;
+        flag = true;
     }
     if(num == 13){
         cator.classList.add("dificulty_selected");
