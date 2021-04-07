@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -48,6 +49,7 @@ public class QuestionController {
     @GetMapping(value= "/new-question")
     @PreAuthorize("hasRole('ROLE_USER')")
     public String showNewQuestionForm() {
+
         return "new-question";
     }
 
@@ -57,6 +59,10 @@ public class QuestionController {
     public RedirectView calculateScore(@PathVariable int dif, @PathVariable int time){
         //metodo que devolve o score atual do jogador ja considerando esta resposta
         long currentScore = userService.addScore(userService.getLoggedUser(), dif,time);
+        User user = userService.getLoggedUser();
+        if (engineService.isWinner(user)) {
+            return new RedirectView("/winnerPage");
+        }
         return new RedirectView("/question");
     }
 

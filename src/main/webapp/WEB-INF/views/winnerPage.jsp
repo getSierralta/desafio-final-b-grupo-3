@@ -22,7 +22,7 @@
             </div>
             <div class="menu">
                 <div class="infoLoser">
-                    <h4>${name}<br>
+                    <h4>Congratulations ${name}<br>
                         YOU WON</h4>
                 </div>
                 <div class="infoGame">

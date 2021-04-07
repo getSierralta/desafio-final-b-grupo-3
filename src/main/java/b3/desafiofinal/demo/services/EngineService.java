@@ -58,7 +58,8 @@ public class EngineService {
     }
 
     public boolean isWinner(User user) {
-        return user.getNumberOfQuestionsAnswered() == 15;
+        System.out.println(user.getNumberOfQuestionsAnswered());
+        return user.getNumberOfQuestionsAnswered() == 14;
     }
 
     private String getDifficulty(User user){
