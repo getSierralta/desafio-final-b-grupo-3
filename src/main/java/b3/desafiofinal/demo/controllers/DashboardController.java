@@ -33,4 +33,8 @@ public class DashboardController {
 
         return "dashboard";
     }
+    @GetMapping(value = "/favicon.ico")
+    public String favicon(){
+        return "thefuck";
+    }
 }

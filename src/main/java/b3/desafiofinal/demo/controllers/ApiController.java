@@ -27,7 +27,6 @@ public class ApiController {
     public ResponseEntity<StatusResponse> criarPergunta(@RequestBody PerguntaRequest request) throws Exception {
         return ResponseEntity.ok(apiService.criarPergunta(request));
     }
-
     @GetMapping("/perguntas/{dificuldade}")
     public ResponseEntity<Pergunta[]> getPerguntas(@PathVariable String dificuldade){
         return ResponseEntity.ok(apiService.getPerguntas(dificuldade));
